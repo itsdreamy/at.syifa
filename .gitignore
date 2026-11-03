@@ -21,6 +21,10 @@ yarn-error.log*
 server/.env
 client/.env
 
+# Reference media
+reference_videos/
+reference_frames/
+
 # Editor and OS
 .DS_Store
 Thumbs.db

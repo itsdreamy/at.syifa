@@ -1,76 +1,107 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, ArrowUpRight, BookOpen } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 import { portfolioApi } from '../services/api';
 
 export default function FeedPage() {
   const [articles, setArticles] = useState([]);
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     window.scrollTo(0, 0);
     portfolioApi.getArticles()
       .then((data) => {
-        if (data) setArticles(data);
+        if (data && data.length > 0) setArticles(data);
       })
-      .catch((err) => console.warn('Articles fallback'))
-      .finally(() => setLoading(false));
+      .catch(() => {});
   }, []);
 
-  return (
-    <div className="pt-32 pb-24 min-h-screen">
-      <div className="max-w-5xl mx-auto px-6 sm:px-8 md:px-12">
-        {/* Navigation Breadcrumb */}
-        <div className="mb-8">
-          <Link
-            to="/"
-            className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-secondary hover:text-foreground transition-colors group"
-          >
-            <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
-            <span>Return to Studio Homepage</span>
-          </Link>
-        </div>
+  const feedItems = [
+    {
+      id: 'art-001',
+      slug: 'crafting-editorial-rhythm-in-modern-web-interfaces',
+      title: 'The Logic of Emotion',
+      date: 'April 26, 2026',
+      description: "In design, clarity isn't about simplicity for its own sake. It's about removing what doesn't serve meaning — until what remains feels inevitable.",
+      image: '/assets/achievements/syifa-1.jpeg',
+      aspect: 'aspect-[3/4]'
+    },
+    {
+      id: 'art-002',
+      slug: 'building-lightweight-physics-springs-in-react',
+      title: 'Precision Over Perfection',
+      date: 'March 29, 2026',
+      description: "Design isn't about getting everything right — it's about making the right things matter.",
+      image: '/assets/achievements/syifa-4.jpeg',
+      aspect: 'aspect-square'
+    },
+    {
+      id: 'art-003',
+      slug: 'the-architecture-of-meaning',
+      title: 'The Architecture of Meaning',
+      date: 'March 2, 2026',
+      description: 'A brand is a structure built from ideas, shaped by language, and held together by design.',
+      image: '/assets/achievements/syifa-3.jpeg',
+      aspect: 'aspect-[4/3]'
+    },
+    {
+      id: 'art-004',
+      slug: 'one-idea-many-forms',
+      title: 'One Idea, Many Forms',
+      date: 'February 6, 2026',
+      description: 'A single thought can take endless shapes. The challenge is keeping its meaning intact as it moves between mediums.',
+      image: '/assets/achievements/syifa-2.jpeg',
+      aspect: 'aspect-[3/4]'
+    }
+  ];
 
+  return (
+    <div className="pt-28 pb-24 min-h-screen bg-white">
+      <div className="w-full px-8 md:px-12">
         {/* Header */}
-        <div className="border-b border-border pb-10 mb-12">
-          <div className="flex items-center gap-2 mb-2">
-            <span className="w-2 h-2 rounded-full bg-[#171717]" />
-            <span className="text-xs uppercase font-mono tracking-widest text-secondary">
-              Publications &amp; Notes
-            </span>
-          </div>
-          <h1 className="font-serif text-5xl sm:text-6xl text-foreground tracking-tight mb-4">
-            Editorial Feed
+        <div className="mb-16 border-b border-border pb-10">
+          <div className="text-xs uppercase font-bold tracking-widest text-muted mb-2">Publications</div>
+          <h1 className="text-6xl sm:text-8xl font-extrabold tracking-tightest uppercase text-foreground">
+            Feed
           </h1>
-          <p className="text-secondary text-base max-w-xl font-light">
-            Reflections, engineering deep-dives, and design notes on crafting thoughtful digital systems.
+          <p className="text-secondary text-base max-w-xl font-normal mt-3">
+            Notes, essays, and observations on design, engineering, and digital culture.
           </p>
         </div>
 
-        {/* Articles List */}
-        <div className="divide-y divide-border border-y border-border">
-          {articles.map((art) => (
+        {/* 3-Column Asymmetric Feed Grid (matches feed.mp4) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 items-start">
+          {feedItems.map((item) => (
             <Link
-              key={art.id}
-              to={`/feed/${art.slug}`}
-              className="py-10 block group hover:bg-surface/60 transition-colors px-4 -mx-4 rounded-xl"
+              key={item.id}
+              to={`/feed/${item.slug}`}
+              className="group block space-y-4 cursor-pointer"
             >
-              <div className="flex items-center justify-between text-xs font-mono text-muted mb-3">
-                <span className="text-foreground font-medium">{art.category}</span>
-                <span>{art.publishedAt} · {art.readingTime}</span>
+              {/* Image Container with Floating Arrow Hover Badge */}
+              <div className={`relative ${item.aspect} w-full rounded-2xl overflow-hidden bg-stone-100 shadow-md`}>
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+                />
+                <div className="absolute inset-0 bg-black/10 group-hover:bg-black/25 transition-colors" />
+                
+                {/* Circular Black Arrow Badge */}
+                <div className="absolute top-4 right-4 w-12 h-12 rounded-full bg-black text-white flex items-center justify-center opacity-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300 shadow-xl">
+                  <ArrowUpRight className="w-5 h-5" />
+                </div>
               </div>
 
-              <h2 className="font-serif text-3xl sm:text-4xl text-foreground group-hover:text-black transition-colors mb-3">
-                {art.title}
-              </h2>
-
-              <p className="text-secondary text-sm sm:text-base font-light leading-relaxed max-w-3xl mb-4">
-                {art.description}
-              </p>
-
-              <div className="inline-flex items-center gap-1.5 text-xs font-mono text-foreground font-semibold group-hover:translate-x-1 transition-transform">
-                <span>Read Full Article</span>
-                <ArrowUpRight className="w-3.5 h-3.5" />
+              {/* Text content */}
+              <div className="space-y-1.5">
+                <div className="text-xs font-bold text-muted uppercase tracking-wider">
+                  {item.date}
+                </div>
+                <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-foreground group-hover:text-black transition-colors leading-snug">
+                  {item.title}
+                </h2>
+                <p className="text-secondary text-sm font-normal leading-relaxed line-clamp-3">
+                  {item.description}
+                </p>
               </div>
             </Link>
           ))}

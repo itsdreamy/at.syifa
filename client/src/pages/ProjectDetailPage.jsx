@@ -1,216 +1,158 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { ArrowLeft, ExternalLink, Github, CheckCircle2, AlertCircle } from 'lucide-react';
-import { motion } from 'framer-motion';
-import { portfolioApi } from '../services/api';
+import { ArrowLeft, ArrowUpRight, Github, ExternalLink, CheckCircle2 } from 'lucide-react';
 import { initialProjects } from '../data/portfolioData';
+import { portfolioApi } from '../services/api';
 
 export default function ProjectDetailPage() {
   const { slug } = useParams();
   const [project, setProject] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
 
   useEffect(() => {
     window.scrollTo(0, 0);
     setLoading(true);
     portfolioApi.getProjectBySlug(slug)
-      .then((data) => {
-        setProject(data);
-      })
-      .catch((err) => {
-        // Fallback to local data
-        const local = initialProjects.find((p) => p.slug === slug || p.id === slug);
-        if (local) {
-          setProject(local);
-        } else {
-          setError(`Project '${slug}' could not be located.`);
-        }
+      .then((data) => setProject(data))
+      .catch(() => {
+        const fallback = initialProjects.find((p) => p.slug === slug || p.id === slug);
+        setProject(fallback);
       })
       .finally(() => setLoading(false));
   }, [slug]);
 
   if (loading) {
     return (
-      <div className="min-h-screen pt-40 pb-20 max-w-4xl mx-auto px-6 text-center">
-        <div className="font-mono text-sm text-secondary animate-pulse">Loading case study...</div>
+      <div className="min-h-screen pt-40 px-8 md:px-12 text-center font-bold text-sm">
+        Loading case study...
       </div>
     );
   }
 
-  if (error || !project) {
+  if (!project) {
     return (
-      <div className="min-h-screen pt-40 pb-20 max-w-4xl mx-auto px-6 text-center">
-        <AlertCircle className="w-12 h-12 text-secondary mx-auto mb-4" />
-        <h1 className="font-serif text-3xl text-foreground mb-4">Project Not Found</h1>
-        <p className="text-secondary text-sm mb-8">{error || 'The requested project could not be found.'}</p>
-        <Link
-          to="/work"
-          className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#171717] text-white text-xs font-mono"
-        >
-          <ArrowLeft className="w-4 h-4" />
-          <span>Return to All Work</span>
-        </Link>
+      <div className="min-h-screen pt-40 px-8 md:px-12 text-center">
+        <h1 className="text-4xl font-extrabold mb-4">Project Not Found</h1>
+        <Link to="/work" className="text-sm font-bold underline">Return to Work</Link>
       </div>
     );
   }
 
   return (
-    <div className="pt-32 pb-24 min-h-screen">
-      <div className="max-w-5xl mx-auto px-6 sm:px-8 md:px-12">
-        {/* Back Navigation */}
-        <div className="mb-10">
+    <div className="pt-28 pb-24 min-h-screen bg-white">
+      <div className="w-full px-8 md:px-12">
+        {/* Breadcrumb Return */}
+        <div className="mb-8">
           <Link
             to="/work"
-            className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-secondary hover:text-foreground transition-colors group"
+            className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-muted hover:text-foreground transition-colors group"
           >
             <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
-            <span>Back to All Projects</span>
+            <span>Return to Work</span>
           </Link>
         </div>
 
-        {/* Header Metadata */}
-        <div className="border-b border-border pb-8 mb-12">
-          <div className="flex flex-wrap items-center gap-3 text-xs font-mono text-muted mb-4">
-            <span className="px-2.5 py-0.5 rounded-full bg-surface border border-border text-foreground">
-              {project.category}
-            </span>
-            <span>•</span>
-            <span>Year: {project.year}</span>
-            <span>•</span>
-            <span>Role: {project.role}</span>
+        {/* Möbius-Style Split Layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+          {/* Left Visual Column */}
+          <div className="lg:col-span-6 relative">
+            <div className="w-full aspect-[4/5] rounded-2xl overflow-hidden bg-surface border border-border shadow-xl relative">
+              <img
+                src={project.thumbnail}
+                alt={project.title}
+                className="w-full h-full object-cover"
+              />
+            </div>
+            {/* Year Watermark in corner */}
+            <div className="text-8xl sm:text-9xl font-extrabold tracking-tightest text-[#ECECEC] select-none mt-4">
+              '{project.year?.slice(-2) || '26'}
+            </div>
           </div>
 
-          <h1 className="font-serif text-4xl sm:text-6xl text-foreground tracking-tight leading-tight mb-6">
-            {project.title}
-          </h1>
+          {/* Right Text Column */}
+          <div className="lg:col-span-6 space-y-8 pt-4">
+            <div>
+              <div className="text-xs uppercase font-bold tracking-widest text-muted mb-2">
+                {project.category} · {project.role}
+              </div>
+              <h1 className="text-5xl sm:text-7xl font-extrabold tracking-tightest text-foreground leading-[1.05] mb-6">
+                {project.title}
+              </h1>
+              <p className="text-secondary text-lg sm:text-xl font-normal leading-relaxed">
+                {project.overview || project.description}
+              </p>
+            </div>
 
-          <p className="text-secondary text-lg sm:text-xl font-light leading-relaxed max-w-3xl">
-            {project.description}
-          </p>
-
-          {/* Links Bar */}
-          <div className="pt-6 flex flex-wrap gap-4">
-            {project.links?.live && (
-              <a
-                href={project.links.live}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#171717] text-white hover:bg-[#333] transition-colors text-xs font-mono"
-              >
-                <span>Live Experience</span>
-                <ExternalLink className="w-3.5 h-3.5" />
-              </a>
-            )}
-            {project.links?.github && (
-              <a
-                href={project.links.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-border bg-surface hover:bg-[#f0f0ee] transition-colors text-xs font-mono text-foreground"
-              >
-                <Github className="w-3.5 h-3.5" />
-                <span>Source Code</span>
-              </a>
-            )}
-          </div>
-        </div>
-
-        {/* Hero Preview Visual */}
-        <div className="w-full aspect-[16/9] rounded-2xl overflow-hidden border border-border bg-[#171717] shadow-xl mb-16">
-          <img
-            src={project.thumbnail}
-            alt={project.title}
-            className="w-full h-full object-cover"
-          />
-        </div>
-
-        {/* Content Breakdown Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-          {/* Main Case Study Column */}
-          <div className="lg:col-span-8 space-y-12">
-            {/* Overview */}
-            {project.overview && (
-              <section className="space-y-4">
-                <h2 className="font-serif text-3xl text-foreground">Project Overview</h2>
-                <p className="text-secondary text-base leading-relaxed font-light">
-                  {project.overview}
-                </p>
-              </section>
-            )}
+            {/* Action Buttons */}
+            <div className="flex flex-wrap gap-4 pt-2">
+              {project.links?.live && (
+                <a
+                  href={project.links.live}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="px-6 py-3 rounded-full bg-black text-white hover:bg-neutral-800 transition-colors text-xs font-bold uppercase tracking-wider inline-flex items-center gap-2"
+                >
+                  <span>Live Project</span>
+                  <ExternalLink className="w-4 h-4" />
+                </a>
+              )}
+              {project.links?.github && (
+                <a
+                  href={project.links.github}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="px-6 py-3 rounded-full border border-black hover:bg-black hover:text-white transition-colors text-xs font-bold uppercase tracking-wider inline-flex items-center gap-2"
+                >
+                  <Github className="w-4 h-4" />
+                  <span>Repository</span>
+                </a>
+              )}
+            </div>
 
             {/* Problem Statement */}
             {project.problem && (
-              <section className="space-y-4 p-6 rounded-xl bg-surface border border-border">
-                <h3 className="font-serif text-2xl text-foreground">The Challenge</h3>
-                <p className="text-secondary text-sm leading-relaxed font-light">
+              <div className="p-6 rounded-2xl bg-[#F7F7F5] border border-border/60 space-y-2">
+                <h3 className="font-bold text-sm uppercase tracking-wider text-muted">The Problem</h3>
+                <p className="text-foreground text-sm sm:text-base leading-relaxed">
                   {project.problem}
                 </p>
-              </section>
+              </div>
             )}
 
-            {/* Process */}
+            {/* Process Steps */}
             {project.process && project.process.length > 0 && (
-              <section className="space-y-4">
-                <h2 className="font-serif text-3xl text-foreground">Engineering &amp; Design Process</h2>
-                <div className="space-y-3">
+              <div className="space-y-4 pt-4">
+                <h3 className="font-extrabold text-2xl tracking-tight text-foreground">Execution Process</h3>
+                <div className="space-y-2.5">
                   {project.process.map((step, idx) => (
-                    <div key={idx} className="flex items-start gap-3 p-4 rounded-lg bg-surface border border-border/80">
-                      <span className="font-mono text-xs text-muted font-bold shrink-0 mt-0.5">0{idx + 1}.</span>
-                      <p className="text-secondary text-sm leading-relaxed">{step}</p>
+                    <div key={idx} className="flex items-start gap-3 p-4 rounded-xl border border-border">
+                      <span className="font-mono text-xs font-bold text-muted mt-0.5">0{idx + 1}</span>
+                      <p className="text-sm text-foreground font-medium leading-relaxed">{step}</p>
                     </div>
                   ))}
                 </div>
-              </section>
+              </div>
             )}
 
             {/* Outcomes */}
-            {project.outcomes && project.outcomes.length > 0 && (
-              <section className="space-y-4">
-                <h2 className="font-serif text-3xl text-foreground">Outcomes &amp; Impact</h2>
-                <div className="grid grid-cols-1 gap-3">
-                  {project.outcomes.map((outcome, idx) => (
-                    <div key={idx} className="flex items-start gap-3 p-4 rounded-lg bg-surface border border-border">
-                      <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                      <p className="text-foreground text-sm font-medium">{outcome}</p>
+            {project.outcomes && (
+              <div className="space-y-3 pt-4">
+                <h3 className="font-extrabold text-2xl tracking-tight text-foreground">Outcomes &amp; Impact</h3>
+                <div className="space-y-2">
+                  {project.outcomes.map((item, i) => (
+                    <div key={i} className="flex items-center gap-2 text-sm font-semibold text-foreground">
+                      <CheckCircle2 className="w-4 h-4 text-black shrink-0" />
+                      <span>{item}</span>
                     </div>
                   ))}
                 </div>
-              </section>
-            )}
-          </div>
-
-          {/* Sidebar Specs */}
-          <div className="lg:col-span-4 space-y-8">
-            {/* Technologies */}
-            <div className="p-6 rounded-xl bg-surface border border-border space-y-4">
-              <h4 className="text-xs uppercase font-mono tracking-widest text-secondary">Technologies Used</h4>
-              <div className="flex flex-wrap gap-2">
-                {project.technologies?.map((tech) => (
-                  <span
-                    key={tech}
-                    className="px-2.5 py-1 rounded text-xs font-mono bg-background border border-border text-foreground"
-                  >
-                    {tech}
-                  </span>
-                ))}
               </div>
+            )}
+
+            {/* Bottom Tag List (matches frame_06) */}
+            <div className="pt-8 border-t border-border text-xs uppercase font-bold tracking-wider text-muted leading-relaxed">
+              {project.technologies ? project.technologies.join(', ') : 'UI Architecture, Frontend Engineering, Motion Design'}
             </div>
-
-            {/* Responsibilities */}
-            {project.responsibilities && (
-              <div className="p-6 rounded-xl bg-surface border border-border space-y-4">
-                <h4 className="text-xs uppercase font-mono tracking-widest text-secondary">Responsibilities</h4>
-                <ul className="space-y-2 text-xs font-sans text-secondary">
-                  {project.responsibilities.map((r, i) => (
-                    <li key={i} className="flex items-start gap-2">
-                      <span className="text-muted">•</span>
-                      <span>{r}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
           </div>
         </div>
       </div>

@@ -7,15 +7,15 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: '#F7F7F5',
-        surface: '#FFFFFF',
-        foreground: '#171717',
-        secondary: '#777777',
-        muted: '#A1A1A1',
-        border: '#E5E5E5',
+        background: '#FFFFFF',
+        surface: '#FAFAF9',
+        foreground: '#000000',
+        secondary: '#666666',
+        muted: '#999999',
+        border: '#E8E8E6',
         dark: {
-          DEFAULT: '#171717',
-          surface: '#252525'
+          DEFAULT: '#000000',
+          surface: '#171717'
         },
         capy: {
           brown: '#B88A62',
@@ -24,33 +24,31 @@ export default {
         }
       },
       fontFamily: {
-        serif: ['"Instrument Serif"', '"DM Serif Display"', 'Georgia', 'serif'],
-        sans: ['"Inter"', '"Geist"', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+        sans: ['"Plus Jakarta Sans"', '"Inter"', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+        display: ['"Plus Jakarta Sans"', '"Inter"', 'sans-serif'],
         mono: ['"JetBrains Mono"', 'monospace']
       },
+      letterSpacing: {
+        tighter: '-0.04em',
+        tightest: '-0.06em',
+      },
       animation: {
+        'marquee': 'marquee 25s linear infinite',
+        'marquee-reverse': 'marqueeRev 25s linear infinite',
         'float-slow': 'float 7s ease-in-out infinite',
-        'float-delayed': 'float 8s ease-in-out 2s infinite',
-        'float-reverse': 'floatRev 7.5s ease-in-out 1s infinite',
-        'ripple': 'ripple 1.4s cubic-bezier(0, 0.2, 0.8, 1) forwards',
-        'water-flow': 'waterFlow 12s linear infinite',
       },
       keyframes: {
+        marquee: {
+          '0%': { transform: 'translateX(0%)' },
+          '100%': { transform: 'translateX(-50%)' },
+        },
+        marqueeRev: {
+          '0%': { transform: 'translateX(-50%)' },
+          '100%': { transform: 'translateX(0%)' },
+        },
         float: {
           '0%, 100%': { transform: 'translateY(0px)' },
           '50%': { transform: 'translateY(-10px)' },
-        },
-        floatRev: {
-          '0%, 100%': { transform: 'translateY(0px)' },
-          '50%': { transform: 'translateY(10px)' },
-        },
-        ripple: {
-          '0%': { transform: 'scale(0.1)', opacity: '0.8' },
-          '100%': { transform: 'scale(3.5)', opacity: '0' },
-        },
-        waterFlow: {
-          '0%': { backgroundPosition: '0% 0%' },
-          '100%': { backgroundPosition: '100% 100%' },
         }
       }
     },
