@@ -1,0 +1,22 @@
+[
+  {
+    "id": "art-001",
+    "slug": "crafting-editorial-rhythm-in-modern-web-interfaces",
+    "title": "Crafting Editorial Rhythm in Modern Web Interfaces",
+    "description": "How architectural grids, Swiss typography principles, and deliberate whitespace transform standard SaaS into captivating editorial web experiences.",
+    "category": "Design & UI/UX",
+    "publishedAt": "2026-02-15",
+    "readingTime": "5 min",
+    "content": "# Crafting Editorial Rhythm in Modern Web Interfaces\n\nWhen we look at traditional print media—especially architectural monographs, high-fashion publications, and Swiss graphic design retrospectives—there is an unmistakable sense of confidence in the whitespace and structural grid alignment.\n\nYet, on the modern web, we often find ourselves drowning in rounded cards with soft box shadows, neon gradient pill tags, and generic dashboard aesthetics.\n\n### The Structural Grid\n\nAn editorial interface starts with a visible, confident grid. Instead of hiding the layout structure behind arbitrary margins, framing the content with subtle, hairline borders (`#E5E5E5` on `#F7F7F5`) creates clarity and architectural stability.\n\n### Typographic Contrast\n\nPairing a characterful serif headline (such as Instrument Serif) with a restrained geometric or neo-grotesque sans-serif (Inter or Geist) immediately sets a contemplative, editorial tone. The headline establishes mood; the body copy guarantees maximum legibility.\n\n### Motion as Punctuation\n\nAnimations should never be decorative noise. In an editorial layout, motion acts like punctuation in an essay. It guides the eye gently from one headline to the next without hijacking the user's natural scroll cadence."
+  },
+  {
+    "id": "art-002",
+    "slug": "building-lightweight-physics-springs-in-react",
+    "title": "Building Lightweight Physics Springs for Web Micro-Interactions",
+    "description": "A deep dive into numerical solvers, Runge-Kutta 4th order integration, and zero-dependency micro-libraries for fluid 60fps animations.",
+    "category": "Engineering",
+    "publishedAt": "2026-01-28",
+    "readingTime": "6 min",
+    "content": "# Building Lightweight Physics Springs for Web Micro-Interactions\n\nCSS easing curves (`cubic-bezier`) are great for predetermined timelines, but real physical objects respond dynamically to velocity, interruption, and mass.\n\nWhen a user drags an element or touches water ripples, a prebaked bezier transition often feels stiff or abruptly cuts off when interrupted.\n\n### Why Spring Physics?\n\nA damped harmonic oscillator equation allows the destination coordinates to update in real time while smoothly carrying over residual momentum. Whether it is an interactive swimming capybara following a cursor or a floating card responding to cursor magnetic pull, spring dynamics feel alive because they respect physical momentum.\n\n### Keeping Bundle Footprints Under 2KB\n\nBy leveraging standard RK4 integration and avoiding unnecessary object allocations inside the frame loop, we achieve pristine 60fps execution even on lower-tier mobile hardware without dragging in a 100KB dependency tree."
+  }
+]

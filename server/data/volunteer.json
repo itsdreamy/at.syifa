@@ -1,0 +1,20 @@
+[
+  {
+    "id": "vol-001",
+    "organization": "Tech Youth Initiative",
+    "role": "Volunteer Frontend & Design Mentor",
+    "description": "Mentored high school students and career-switchers in fundamental web development (HTML, CSS, JavaScript, React) and accessible user interface design principles.",
+    "contribution": "Conducted 12+ hands-on interactive coding workshops and provided portfolio reviews for 45+ aspiring junior developers.",
+    "date": "2023 - 2024",
+    "image": "/assets/achievements/syifa-5.jpeg"
+  },
+  {
+    "id": "vol-002",
+    "organization": "Community Digital Inclusion Project",
+    "role": "UI/UX Accessibility Volunteer",
+    "description": "Collaborated with local community non-profit organizations to improve digital accessibility and redesign public informational portals.",
+    "contribution": "Conducted usability tests with diverse user cohorts and implemented accessible color contrast and keyboard navigation improvements.",
+    "date": "2022 - 2023",
+    "image": "/assets/achievements/syifa-1.jpeg"
+  }
+]

@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #F7F7F5;
+  --surface: #FFFFFF;
+  --foreground: #171717;
+  --secondary: #777777;
+  --muted: #A1A1A1;
+  --border: #E5E5E5;
+  --dark: #171717;
+  --dark-surface: #252525;
+  --capybara-brown: #B88A62;
+  --donut-pink: #E9A6B7;
+  --pool-blue: #B8DDE8;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom editorial scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #F7F7F5;
+}
+::-webkit-scrollbar-thumb {
+  background: #D4D4D0;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #171717;
+}
+
+/* Water Ripple Animation */
+@keyframes waterRippleExpand {
+  0% {
+    transform: translate(-50%, -50%) scale(0.1);
+    opacity: 0.9;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(4);
+    opacity: 0;
+  }
+}
+
+.ripple-circle {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  box-shadow: 0 0 12px rgba(184, 221, 232, 0.6);
+  animation: waterRippleExpand 1.2s cubic-bezier(0.1, 0.4, 0.2, 1) forwards;
+}
+
+/* Pool subtle water surface shimmer */
+.pool-shimmer {
+  background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.15) 0%, rgba(184, 221, 232, 0.05) 50%, transparent 80%);
+  background-size: 150% 150%;
+  animation: shimmerMotion 8s ease-in-out infinite alternate;
+}
+
+@keyframes shimmerMotion {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
+
+/* Float bobbing */
+@keyframes capyBob {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-6px) rotate(1.5deg);
+  }
+  75% {
+    transform: translateY(6px) rotate(-1.5deg);
+  }
+}
+
+.animate-capy-bob {
+  animation: capyBob 4.8s ease-in-out infinite;
+}
+
+/* Architectural Grid Overlay (Easter Egg Ctrl+G) */
+.grid-overlay {
+  background-size: 80px 80px;
+  background-image: 
+    linear-gradient(to right, rgba(23, 23, 23, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(23, 23, 23, 0.04) 1px, transparent 1px);
+}

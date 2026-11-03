@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <rect width="800" height="500" fill="#f4f4f2"/>
+  <rect x="60" y="50" width="680" height="400" fill="#ffffff" stroke="#e0e0dc" stroke-width="1"/>
+  
+  <line x1="60" y1="120" x2="740" y2="120" stroke="#eeeeea" stroke-width="1"/>
+  <line x1="280" y1="120" x2="280" y2="450" stroke="#eeeeea" stroke-width="1"/>
+  
+  <text x="90" y="95" font-family="'Instrument Serif', Georgia, serif" font-size="28" fill="#171717" letter-spacing="1">AURORA GAZETTE</text>
+  <text x="600" y="93" font-family="'Inter', sans-serif" font-size="11" fill="#777777">ISSUE NO. 04 / 2026</text>
+  
+  <text x="90" y="160" font-family="'Inter', sans-serif" font-size="11" font-weight="600" fill="#888888">EDITORIAL INDEX</text>
+  <text x="90" y="195" font-family="'Inter', sans-serif" font-size="13" fill="#171717">01. Architectural Grids</text>
+  <text x="90" y="230" font-family="'Inter', sans-serif" font-size="13" fill="#171717">02. Typographic Cadence</text>
+  <text x="90" y="265" font-family="'Inter', sans-serif" font-size="13" fill="#171717">03. Responsive Fluidity</text>
+  <text x="90" y="300" font-family="'Inter', sans-serif" font-size="13" fill="#171717">04. Micro-Interactions</text>
+  
+  <!-- Article Column -->
+  <text x="320" y="180" font-family="'Instrument Serif', Georgia, serif" font-size="34" fill="#171717">The Art of Deliberate Whitespace</text>
+  <text x="320" y="220" font-family="'Inter', sans-serif" font-size="13" fill="#555555" width="380">
+    <tspan x="320" dy="0">Whitespace is not an absence of content;</tspan>
+    <tspan x="320" dy="22">it is the structural scaffolding that bestows dignity,</tspan>
+    <tspan x="320" dy="22">focus, and natural visual breath to digital interfaces.</tspan>
+  </text>
+  
+  <rect x="320" y="320" width="380" height="90" fill="#f7f7f5" stroke="#e6e6e2"/>
+  <circle cx="360" cy="365" r="20" fill="#B8DDE8"/>
+  <text x="400" y="360" font-family="'Inter', sans-serif" font-size="12" font-weight="600" fill="#171717">Reading Mode Active</text>
+  <text x="400" y="378" font-family="'Inter', sans-serif" font-size="11" fill="#777777">Adaptive fluid scaling across devices</text>
+</svg>

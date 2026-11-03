@@ -1,0 +1,50 @@
+[
+  {
+    "id": "exp-001",
+    "title": "Published npm Package Author",
+    "organization": "Open Source Community",
+    "role": "Creator & Maintainer",
+    "description": "Engineered and released open-source physics animation utilities on the npm registry, focusing on minimal footprint and zero external dependencies.",
+    "responsibilities": [
+      "Architected clean TypeScript API with zero external dependencies",
+      "Wrote comprehensive unit and regression test suites",
+      "Authored API documentation, live interactive codesandbox demos, and benchmarks",
+      "Maintained GitHub issues, pull requests, and automated semantic versioning"
+    ],
+    "date": "2025 - Present",
+    "image": "/assets/achievements/npm-badge.webp",
+    "link": "https://www.npmjs.com"
+  },
+  {
+    "id": "exp-002",
+    "title": "Quality Control (QC) & QA Specialist",
+    "organization": "Digital Solutions Lab",
+    "role": "Quality Control Engineer",
+    "description": "Conducted rigorous UI/UX validation, functional regression testing, and cross-browser quality assurance across responsive web platforms.",
+    "responsibilities": [
+      "Formulated structured test matrices covering responsive breakpoints from 360px to 4K displays",
+      "Audited WCAG 2.1 AA/AAA accessibility compliance including screen reader and keyboard navigation",
+      "Identified and cataloged edge-case rendering bugs and animation performance bottlenecks",
+      "Collaborated closely with engineering squads to streamline defect resolution cycles"
+    ],
+    "date": "2024 - 2025",
+    "image": "/assets/achievements/qc-badge.webp",
+    "link": ""
+  },
+  {
+    "id": "exp-003",
+    "title": "Technical Writer & Documentation Lead",
+    "organization": "Web Platform Studio",
+    "role": "Technical Writer",
+    "description": "Authored comprehensive developer documentation, API guides, user onboarding workflows, and technical release notes for SaaS web applications.",
+    "responsibilities": [
+      "Wrote structured developer documentation including REST API specs, authentication, and error codes",
+      "Designed diagrammatic user walkthroughs and interactive code samples",
+      "Standardized writing style guide and editorial tone of voice across product documentation",
+      "Collaborated with product managers to transform complex engineering features into intuitive guides"
+    ],
+    "date": "2024",
+    "image": "/assets/achievements/docs-badge.webp",
+    "link": ""
+  }
+]

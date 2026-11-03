@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <rect width="800" height="500" fill="#171717"/>
+  <!-- Subtle architectural grid lines -->
+  <line x1="80" y1="0" x2="80" y2="500" stroke="#262626" stroke-width="1"/>
+  <line x1="400" y1="0" x2="400" y2="500" stroke="#262626" stroke-width="1"/>
+  <line x1="720" y1="0" x2="720" y2="500" stroke="#262626" stroke-width="1"/>
+  <line x1="0" y1="250" x2="800" y2="250" stroke="#262626" stroke-width="1"/>
+
+  <!-- UI Kit Preview elements -->
+  <g transform="translate(100, 70)">
+    <!-- Window chrome -->
+    <rect width="600" height="360" rx="8" fill="#1f1f1f" stroke="#333333" stroke-width="1"/>
+    <circle cx="24" cy="24" r="5" fill="#444"/>
+    <circle cx="44" cy="24" r="5" fill="#333"/>
+    <circle cx="64" cy="24" r="5" fill="#333"/>
+    <line x1="0" y1="48" x2="600" y2="48" stroke="#2a2a2a" stroke-width="1"/>
+
+    <!-- Typography header inside window -->
+    <text x="32" y="90" font-family="'Instrument Serif', Georgia, serif" font-size="28" fill="#F7F7F5" letter-spacing="-0.5">Zenith Design System v2.0</text>
+    <text x="32" y="115" font-family="'Inter', sans-serif" font-size="12" fill="#888888">EDITORIAL SCALE &amp; TOKENIZED TOKENS</text>
+
+    <!-- Component preview boxes -->
+    <rect x="32" y="145" width="160" height="85" rx="4" fill="#252525" stroke="#3a3a3a"/>
+    <text x="48" y="180" font-family="'Inter', sans-serif" font-size="13" font-weight="600" fill="#ffffff">Button / Primary</text>
+    <text x="48" y="202" font-family="'Inter', sans-serif" font-size="11" fill="#777">60fps Spring Hover</text>
+
+    <rect x="212" y="145" width="160" height="85" rx="4" fill="#1a1a1a" stroke="#333333"/>
+    <text x="228" y="180" font-family="'Inter', sans-serif" font-size="13" font-weight="600" fill="#e5e5e5">Modal / Sheet</text>
+    <text x="228" y="202" font-family="'Inter', sans-serif" font-size="11" fill="#777">Accessible APCA</text>
+
+    <rect x="392" y="145" width="176" height="85" rx="4" fill="#1a1a1a" stroke="#333333"/>
+    <text x="408" y="180" font-family="'Inter', sans-serif" font-size="13" font-weight="600" fill="#B8DDE8">Input / Interactive</text>
+    <text x="408" y="202" font-family="'Inter', sans-serif" font-size="11" fill="#777">Focus State Rings</text>
+
+    <rect x="32" y="250" width="536" height="60" rx="4" fill="#171717" stroke="#2c2c2c"/>
+    <text x="48" y="285" font-family="'Inter', monospace" font-size="12" fill="#B88A62">import { Button, TokenProvider } from '@zenith/ui';</text>
+  </g>
+</svg>

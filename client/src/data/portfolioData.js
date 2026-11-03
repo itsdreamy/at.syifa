@@ -1,0 +1,164 @@
+export const initialProjects = [
+  {
+    id: "project-001",
+    slug: "zenith-ui-design-system",
+    title: "Zenith Design System & UI Kit",
+    description: "An accessible, editorial design system crafted for high-density SaaS workflows and editorial platforms.",
+    category: "UI Design",
+    technologies: ["Figma", "Tailwind CSS", "React", "Design Tokens"],
+    thumbnail: "/assets/projects/zenith-preview.svg",
+    featured: true,
+    role: "Lead UI/UX Designer & Prototyper",
+    year: "2026",
+    overview: "Zenith was created to bridge high-aesthetic editorial typography with functional, accessible interaction components. It emphasizes micro-interactions, dark/light harmonic palettes, and responsive layouts.",
+    problem: "Modern design systems often prioritize cookie-cutter enterprise layouts over distinctive typography and memorable brand identity, resulting in sterile web interfaces.",
+    process: [
+      "Audited typography scale and vertical grid alignment inspired by architectural publications",
+      "Created tokenized color palettes with accessible APCA contrast algorithms",
+      "Engineered micro-interaction states with 60fps Framer Motion prototypes",
+      "Tested usability with cross-platform interactive previews"
+    ],
+    responsibilities: [
+      "Visual hierarchy and tokenized styling architecture",
+      "Figma component variants with auto-layout v5",
+      "Interactive component documentation and spec sheets",
+      "Front-end prototyping with Tailwind and React"
+    ],
+    screenshots: [
+      "/assets/projects/zenith-preview.svg"
+    ],
+    outcomes: [
+      "Reduced visual design debt by 40% across component implementations",
+      "Achieved 100% WCAG AAA rating on body typography scales",
+      "Adopted by multiple community frontend contributors"
+    ],
+    links: {
+      live: "https://example.com/zenith",
+      github: "https://github.com/example/zenith-design-system"
+    }
+  },
+  {
+    id: "project-002",
+    slug: "flowcraft-web-app",
+    title: "Flowcraft Interactive Studio",
+    description: "A high-performance web application designed for canvas-based visual workflow automation and mind mapping.",
+    category: "Web Development",
+    technologies: ["React", "TypeScript", "Canvas API", "Tailwind CSS"],
+    thumbnail: "/assets/projects/flowcraft-preview.svg",
+    featured: true,
+    role: "Frontend Developer",
+    year: "2025",
+    overview: "Flowcraft is an interactive browser workspace allowing designers and developers to visually diagram system logic with zero input latency and organic smooth pan/zoom dynamics.",
+    problem: "Heavy visual diagramming tools often suffer from dropped frames and clunky viewport navigation on standard laptops.",
+    process: [
+      "Benchmarked HTML5 Canvas versus SVG DOM nodes for rendering thousands of interconnected nodes",
+      "Implemented dirty-rect rendering and requestAnimationFrame viewport culling",
+      "Designed an ultra-clean monochrome editorial UI to keep focus on user diagrams"
+    ],
+    responsibilities: [
+      "Canvas rendering engine and smooth infinite canvas pan/zoom",
+      "State synchronization and undo/redo history trees",
+      "Responsive toolbar and keyboard shortcut mapping"
+    ],
+    screenshots: [
+      "/assets/projects/flowcraft-preview.svg"
+    ],
+    outcomes: [
+      "Maintained rock-solid 60 FPS under stress tests with 1,500+ active nodes",
+      "Intuitive keyboard-driven navigation praised by early beta testers"
+    ],
+    links: {
+      live: "https://example.com/flowcraft",
+      github: "https://github.com/example/flowcraft-app"
+    }
+  },
+  {
+    id: "project-003",
+    slug: "fast-spring-motion-npm",
+    title: "fast-spring-motion (npm package)",
+    description: "A published lightweight zero-dependency physics spring solver for high-performance React and DOM animations.",
+    category: "Open Source",
+    technologies: ["TypeScript", "npm", "Microbenchmarks", "Rollup"],
+    thumbnail: "/assets/projects/npm-preview.svg",
+    featured: true,
+    role: "Creator & Maintainer",
+    year: "2025",
+    overview: "Published on npm, fast-spring-motion delivers RK4 spring physics numerical integration in less than 1.8 KB minified, enabling silky smooth organic transitions without bundle bloat.",
+    problem: "Full animation engines like Framer Motion or GSAP can be excessive for lightweight UI widgets needing only organic elastic interpolation.",
+    process: [
+      "Implemented 4th-order Runge-Kutta numerical solver for mass-spring-damper equations",
+      "Profiled garbage collector pressure and eliminated object allocations in inner loops",
+      "Wrote 100% branch test coverage using Vitest and published automated CI/CD releases"
+    ],
+    responsibilities: [
+      "Mathematical modeling of critically damped and underdamped oscillators",
+      "API design and TypeScript definitions",
+      "Packaging, documentation, and continuous benchmarking"
+    ],
+    screenshots: [
+      "/assets/projects/npm-preview.svg"
+    ],
+    outcomes: [
+      "Over 10,000+ downloads on npm registry",
+      "Under 1.8 KB minified bundle footprint with zero external dependencies"
+    ],
+    links: {
+      live: "https://www.npmjs.com/package/fast-spring-motion",
+      github: "https://github.com/example/fast-spring-motion"
+    }
+  },
+  {
+    id: "project-004",
+    slug: "aurora-editorial-reader",
+    title: "Aurora Editorial Publishing Platform",
+    description: "Minimalist digital reading experience focusing on fluid scroll transitions and typographic rhythm.",
+    category: "UI Design & Web App",
+    technologies: ["React", "Framer Motion", "Tailwind CSS", "Vite"],
+    thumbnail: "/assets/projects/aurora-preview.svg",
+    featured: false,
+    role: "Design Engineer",
+    year: "2025",
+    overview: "A modern web publication engine that mimics luxury print magazines with responsive layouts and non-intrusive micro-animations.",
+    problem: "Online publications are overwhelmed with popups, banners, and layout shifts that ruin the reading experience.",
+    process: [
+      "Studied Swiss graphic design layouts and typographic grid systems",
+      "Integrated subtle scroll-linked typography reveals and reading progress markers"
+    ],
+    responsibilities: [
+      "Editorial UI design and responsive typesetting",
+      "Framer Motion layout animations and reading mode transitions"
+    ],
+    screenshots: [
+      "/assets/projects/aurora-preview.svg"
+    ],
+    outcomes: [
+      "Delivered average session duration increase of 65% in test cohorts"
+    ],
+    links: {
+      live: "https://example.com/aurora",
+      github: "https://github.com/example/aurora-reader"
+    }
+  }
+];
+
+export const capybaraMessages = [
+  "Psst! Have you explored my projects yet?",
+  "I heard someone here likes good UI design.",
+  "Did you know I also build web applications?",
+  "A 3.97 GPA? We are a little proud of that.",
+  "Don't forget to check out my npm package!",
+  "Take your time. There's no rush here.",
+  "My human enjoys turning ideas into experiences.",
+  "Have you visited the swimming pool yet?"
+];
+
+export const poolMessages = [
+  "Wanna swim with me?",
+  "Psst... touch the water!",
+  "WAIT! I'M COMING!",
+  "Hehe. You found my favorite spot.",
+  "The water is nice today!",
+  "Just one more splash?",
+  "Thanks for keeping me company!",
+  "Don't forget to say hi to my human!"
+];
