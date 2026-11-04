@@ -13,7 +13,7 @@ const __dirname = path.dirname(__filename);
 
 const app = express();
 const PORT = process.env.PORT || 5000;
-const CLIENT_URL = process.env.CLIENT_URL || '*';
+const CLIENT_URL = process.env.CLIENT_URL || 'http://localhost:5173';
 
 // CORS configuration
 app.use(
@@ -54,7 +54,7 @@ app.get('*', (req, res, next) => {
 // Global error handler
 app.use(globalErrorHandler);
 
-app.listen(PORT, () => {
+app.listen(PORT, "0.0.0.0", () => {
   console.log(`🚀 at.syifa backend API server running on port ${PORT}`);
   console.log(`📡 Health check: http://localhost:${PORT}/api/health`);
 });

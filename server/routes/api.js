@@ -22,3 +22,5 @@ router.get('/articles', getArticles);
 router.get('/articles/:slug', getArticleBySlug);
 
 export default router;
+
+// get all the routes
