@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
-import { AnimatePresence, motion } from 'framer-motion';
+import { AnimatePresence, motion, PresenceContext } from 'framer-motion';
 import Navbar from './components/navigation/Navbar';
 import Footer from './components/navigation/Footer';
 import CapybaraAssistant from './components/capybara/CapybaraAssistant';
@@ -12,6 +12,16 @@ import StudioPage from './pages/StudioPage';
 import FeedPage from './pages/FeedPage';
 import ArticleDetailPage from './pages/ArticleDetailPage';
 import ContactPage from './pages/ContactPage';
+
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
 
 function AnimatedRoutes() {
   const location = useLocation();
@@ -26,16 +36,19 @@ function AnimatedRoutes() {
         transition={{ duration: 0.28, ease: 'easeInOut' }}
         className="flex-grow flex flex-col"
       >
-        <Routes location={location}>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/work" element={<WorkPage />} />
-          <Route path="/work/:slug" element={<ProjectDetailPage />} />
-          <Route path="/studio" element={<StudioPage />} />
-          <Route path="/feed" element={<FeedPage />} />
-          <Route path="/feed/:slug" element={<ArticleDetailPage />} />
-          <Route path="/contact" element={<ContactPage />} />
-          <Route path="*" element={<HomePage />} />
-        </Routes>
+        {/* Isolate route PresenceContext so internal UI components cannot block page unmounting */}
+        <PresenceContext.Provider value={null}>
+          <Routes location={location}>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/work" element={<WorkPage />} />
+            <Route path="/work/:slug" element={<ProjectDetailPage />} />
+            <Route path="/studio" element={<StudioPage />} />
+            <Route path="/feed" element={<FeedPage />} />
+            <Route path="/feed/:slug" element={<ArticleDetailPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+            <Route path="*" element={<HomePage />} />
+          </Routes>
+        </PresenceContext.Provider>
       </motion.div>
     </AnimatePresence>
   );
@@ -45,6 +58,9 @@ export default function App() {
   return (
     <Router>
       <div className="min-h-screen flex flex-col bg-white text-foreground relative selection:bg-black selection:text-white">
+        {/* Reset window scroll to top on navigation */}
+        <ScrollToTop />
+
         {/* Architectural Grid Overlay (Ctrl+G Easter Egg) */}
         <GridOverlay />
 

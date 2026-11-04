@@ -45,7 +45,7 @@ export default function ContactPage() {
             ) : (
               <form onSubmit={handleSubmit} className="space-y-8 text-xl sm:text-2xl md:text-3xl font-bold text-foreground leading-relaxed">
                 <div>
-                  Hey at.syifa®, my name is{' '}
+                  Hey Syifa, my name is{' '}
                   <input
                     type="text"
                     required
@@ -97,8 +97,8 @@ export default function ContactPage() {
           <div className="lg:col-span-4 space-y-8 border-t lg:border-t-0 lg:border-l border-border pt-12 lg:pt-0 lg:pl-12">
             <div className="space-y-2">
               <div className="text-xs font-bold uppercase tracking-widest text-muted">Direct Email</div>
-              <a href="mailto:syifa@example.com" className="text-xl font-bold text-foreground hover:underline">
-                syifa@example.com
+              <a href="mailto:syifasaepulbachri@gmail.com" className="text-xl font-bold text-foreground hover:underline">
+                syifasaepulbachri@gmail.com
               </a>
             </div>
 
@@ -112,7 +112,6 @@ export default function ContactPage() {
             <div className="space-y-2">
               <div className="text-xs font-bold uppercase tracking-widest text-muted">Availability</div>
               <div className="flex items-center gap-2 text-sm font-bold text-emerald-600">
-                <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
                 <span>Open for select engagements</span>
               </div>
             </div>

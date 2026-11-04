@@ -55,7 +55,7 @@ export default function FeedPage() {
   ];
 
   return (
-    <div className="pt-28 pb-24 min-h-screen bg-white">
+    <div className="pt-28 mb-20 pb-48 bg-white">
       <div className="w-full px-8 md:px-12">
         {/* Header */}
         <div className="mb-16 border-b border-border pb-10">
@@ -69,14 +69,19 @@ export default function FeedPage() {
         </div>
 
         {/* 3-Column Asymmetric Feed Grid (matches feed.mp4) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 items-start">
+        <div className="flex flex-col items-center justify-center">
+            <h1 className="text-4xl font-bold text-center">Coming Soon</h1>
+            <Link to="/" className="text-blue-500 hover:text-blue-600">
+              Go back to the home page
+            </Link>
+        {/*           
           {feedItems.map((item) => (
             <Link
               key={item.id}
               to={`/feed/${item.slug}`}
               className="group block space-y-4 cursor-pointer"
             >
-              {/* Image Container with Floating Arrow Hover Badge */}
+              {/* Image Container with Floating Arrow Hover Badge
               <div className={`relative ${item.aspect} w-full rounded-2xl overflow-hidden bg-stone-100 shadow-md`}>
                 <img
                   src={item.image}
@@ -85,13 +90,13 @@ export default function FeedPage() {
                 />
                 <div className="absolute inset-0 bg-black/10 group-hover:bg-black/25 transition-colors" />
                 
-                {/* Circular Black Arrow Badge */}
+                {/* Circular Black Arrow Badge
                 <div className="absolute top-4 right-4 w-12 h-12 rounded-full bg-black text-white flex items-center justify-center opacity-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300 shadow-xl">
                   <ArrowUpRight className="w-5 h-5" />
                 </div>
               </div>
 
-              {/* Text content */}
+              {/* Text content 
               <div className="space-y-1.5">
                 <div className="text-xs font-bold text-muted uppercase tracking-wider">
                   {item.date}
@@ -105,6 +110,7 @@ export default function FeedPage() {
               </div>
             </Link>
           ))}
+           */}
         </div>
       </div>
     </div>

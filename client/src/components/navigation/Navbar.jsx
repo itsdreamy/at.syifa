@@ -9,7 +9,7 @@ export default function Navbar() {
 
   const navItems = [
     { name: 'WORK', path: '/work' },
-    { name: 'STUDIO', path: '/studio' },
+    // { name: 'STUDIO', path: '/studio' },
     { name: 'FEED', path: '/feed' },
     { name: 'CONTACT', path: '/contact' },
   ];
