@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 export default function KineticMarquee() {
-  const words = ['clarity', 'imagination', 'craft', 'precision', 'motion', 'structure', 'rhythm'];
+  const words = ['Design', 'Development', 'Creativity', 'Curiosity', 'Learning', 'Building'];
 
   return (
     <div className="relative py-20 overflow-hidden bg-white select-none border-y border-border">

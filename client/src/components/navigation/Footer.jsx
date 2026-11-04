@@ -39,10 +39,10 @@ export default function Footer() {
       {/* Giant Typography Brand Header */}
       <div className="relative mb-16 select-none">
         <h2 className="text-[14vw] font-extrabold tracking-tightest leading-none text-foreground w-full uppercase">
-          at.syifa®
+          at.syifa
         </h2>
         <div className="absolute top-2 right-0 font-bold text-xs md:text-sm tracking-widest text-foreground">
-          © 2024-26
+          © 2026
         </div>
       </div>
 
@@ -51,7 +51,7 @@ export default function Footer() {
         {/* Newsletter Column */}
         <div className="md:col-span-6 space-y-6">
           <p className="text-secondary text-sm md:text-base font-normal max-w-md leading-relaxed">
-            Join our studio newsletter for thoughts on design, brand systems, and creative direction — sent occasionally, when there's something worth saying.
+            Join our newsletter for thoughts on design and coding! I'll send you updates ocassionally.
           </p>
 
           <form onSubmit={handleSubscribe} className="relative max-w-md">
@@ -84,7 +84,7 @@ export default function Footer() {
           <ul className="space-y-3 font-bold text-lg md:text-xl text-foreground">
             <li>
               <a 
-                href="https://linkedin.com" 
+                href="https://www.linkedin.com/in/hi-syifaaa/" 
                 target="_blank" 
                 rel="noreferrer" 
                 className="hover:opacity-60 transition-opacity block"
@@ -92,7 +92,7 @@ export default function Footer() {
                 LinkedIn
               </a>
             </li>
-            <li>
+            {/* <li>
               <a 
                 href="https://x.com" 
                 target="_blank" 
@@ -101,10 +101,10 @@ export default function Footer() {
               >
                 X (Twitter)
               </a>
-            </li>
+            </li> */}
             <li>
               <a 
-                href="https://instagram.com" 
+                href="https://instagram.com/hi.syifaaa_" 
                 target="_blank" 
                 rel="noreferrer" 
                 className="hover:opacity-60 transition-opacity block"
@@ -114,7 +114,7 @@ export default function Footer() {
             </li>
             <li>
               <a 
-                href="https://github.com" 
+                href="https://github.com/itsdreamy" 
                 target="_blank" 
                 rel="noreferrer" 
                 className="hover:opacity-60 transition-opacity block"
@@ -132,12 +132,12 @@ export default function Footer() {
           </div>
           <ul className="space-y-3 font-bold text-lg md:text-xl text-foreground">
             <li>
-              <Link to="/studio" className="hover:opacity-60 transition-opacity block">
+              <Link to="/" className="hover:opacity-60 transition-opacity block">
                 Privacy Policy
               </Link>
             </li>
             <li>
-              <Link to="/studio" className="hover:opacity-60 transition-opacity block">
+              <Link to="/" className="hover:opacity-60 transition-opacity block">
                 Terms of Service
               </Link>
             </li>
@@ -153,13 +153,10 @@ export default function Footer() {
       {/* Bottom Bar */}
       <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-[11px] font-bold tracking-widest uppercase text-muted">
         <div>
-          DESIGN &amp; CODE HANDCRAFTED BY SYIFA
-        </div>
-        <div>
           © 2026 AT.SYIFA. ALL RIGHTS RESERVED.
         </div>
         <div>
-          {timeStr || 'JAKARTA, ID'}
+          {timeStr || 'SUKABUMI, ID'}
         </div>
       </div>
     </footer>

@@ -177,25 +177,13 @@ export default function StudioPage() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {volunteer.map((vol) => (
-              <div key={vol.id} className="p-8 rounded-2xl bg-surface border border-border space-y-4">
-                <div className="flex items-center justify-between text-xs uppercase font-bold text-muted">
-                  <span className="text-foreground">{vol.organization}</span>
-                  <span>{vol.date}</span>
-                </div>
-                <h3 className="font-extrabold text-2xl text-foreground">{vol.role}</h3>
-                <p className="text-secondary text-sm leading-relaxed">{vol.description}</p>
-                {vol.contribution && (
-                  <div className="p-4 rounded-xl bg-white border border-border/60 text-xs text-foreground font-mono">
-                    <strong className="block text-muted text-[10px] uppercase mb-1">Impact:</strong>
-                    {vol.contribution}
-                  </div>
-                )}
+              <div key={vol.id} className="bg-surface rounded-2xl overflow-hidden border border-border hover:border-black transition-colors flex flex-col shadow-sm">
                 {vol.image && (
                   <div 
                     onClick={() => setModalImage({ src: vol.image, title: `${vol.organization} - ${vol.role}` })}
-                    className="aspect-[21/9] w-full rounded-xl overflow-hidden cursor-pointer"
+                    className="aspect-[3/4] w-full overflow-hidden bg-stone-100 cursor-pointer"
                   >
                     <img 
                       src={vol.image} 
@@ -204,6 +192,22 @@ export default function StudioPage() {
                     />
                   </div>
                 )}
+                <div className="p-6 space-y-3 flex-grow flex flex-col justify-between">
+                  <div>
+                    <div className="flex items-center justify-between text-xs uppercase font-bold text-muted mb-2">
+                      <span className="text-foreground">{vol.role}</span>
+                      <span>{vol.date}</span>
+                    </div>
+                    <h3 className="font-extrabold text-xl text-foreground mb-1">{vol.organization}</h3>
+                    <p className="text-secondary text-sm leading-relaxed">{vol.description}</p>
+                  </div>
+                  {vol.contribution && (
+                    <div className="p-3 rounded-lg bg-white border border-border/60 text-xs text-foreground font-mono">
+                      <strong className="block text-muted text-[10px] uppercase mb-0.5">Impact:</strong>
+                      {vol.contribution}
+                    </div>
+                  )}
+                </div>
               </div>
             ))}
           </div>

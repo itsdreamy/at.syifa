@@ -129,27 +129,17 @@ export default function CapybaraPool() {
         {/* Editorial Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 pb-6 border-b border-border">
           <div>
-            <div className="flex items-center gap-2 mb-2">
-              <span className="w-2 h-2 rounded-full bg-[#B8DDE8]" />
-              <span className="text-xs uppercase font-mono tracking-widest text-secondary">
-                Interactive Space · Section 08
-              </span>
-            </div>
             <h2 className="font-serif text-4xl sm:text-5xl text-foreground tracking-tight">
-              The Capybara Pool
+            A Little Break!
             </h2>
+            <p className="text-secondary text-sm font-sans max-w-sm">You've made it this far. How about taking a tiny break?</p>
           </div>
           <div className="mt-4 md:mt-0 flex items-center gap-4">
             <p className="text-secondary text-sm font-sans max-w-sm">
-              "You've explored my work. Now come say hi to my little swimming buddy. Touch anywhere in the pool."
+              Give the water a tap and see where our little friend goes. No deadlines, no to-do lists. Just a capybara enjoying the pool.
+              <br />
+              Go on, say hello!
             </p>
-            <button
-              onClick={() => setReducedMotion(!reducedMotion)}
-              className="px-3 py-1.5 rounded-full border border-border text-xs font-mono text-secondary hover:text-foreground hover:bg-surface transition-all flex items-center gap-1.5 shrink-0"
-              title="Toggle Reduced Motion"
-            >
-              <span>{reducedMotion ? 'Enable Waves' : 'Reduced Motion'}</span>
-            </button>
           </div>
         </div>
 
@@ -214,7 +204,6 @@ export default function CapybaraPool() {
                   transition={{ duration: 0.2 }}
                   className="absolute -top-12 left-1/2 -translate-x-1/2 whitespace-nowrap bg-surface/95 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-border shadow-md text-xs font-mono font-medium text-foreground flex items-center gap-1.5 z-20"
                 >
-                  <span className="w-1.5 h-1.5 rounded-full bg-capy-brown" />
                   <span>{dialogue}</span>
                 </motion.div>
               </AnimatePresence>
@@ -241,7 +230,6 @@ export default function CapybaraPool() {
 
           {/* Bottom pool deck instruction badge */}
           <div className="absolute bottom-4 left-6 pointer-events-none bg-surface/80 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-white/50 text-[11px] font-mono text-slate-700 shadow-sm flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-[#171717] animate-ping" />
             <span>Click or drag anywhere in the water to guide the capybara</span>
           </div>
 

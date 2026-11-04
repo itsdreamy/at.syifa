@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { ArrowLeft, ArrowUpRight, Github, ExternalLink, CheckCircle2 } from 'lucide-react';
+import { ArrowLeft, ExternalLink, Github, CheckCircle2 } from 'lucide-react';
 import { initialProjects } from '../data/portfolioData';
 import { portfolioApi } from '../services/api';
 
@@ -56,11 +56,11 @@ export default function ProjectDetailPage() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           {/* Left Visual Column */}
           <div className="lg:col-span-6 relative">
-            <div className="w-full aspect-[4/5] rounded-2xl overflow-hidden bg-surface border border-border shadow-xl relative">
+            <div className="w-full aspect-[16/10] sm:aspect-[4/3] rounded-2xl overflow-hidden bg-neutral-900 border border-border shadow-xl relative flex items-center justify-center p-2">
               <img
                 src={project.thumbnail}
                 alt={project.title}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain rounded-xl"
               />
             </div>
             {/* Year Watermark in corner */}
@@ -84,30 +84,32 @@ export default function ProjectDetailPage() {
             </div>
 
             {/* Action Buttons */}
-            <div className="flex flex-wrap gap-4 pt-2">
-              {project.links?.live && (
-                <a
-                  href={project.links.live}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="px-6 py-3 rounded-full bg-black text-white hover:bg-neutral-800 transition-colors text-xs font-bold uppercase tracking-wider inline-flex items-center gap-2"
-                >
-                  <span>Live Project</span>
-                  <ExternalLink className="w-4 h-4" />
-                </a>
-              )}
-              {project.links?.github && (
-                <a
-                  href={project.links.github}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="px-6 py-3 rounded-full border border-black hover:bg-black hover:text-white transition-colors text-xs font-bold uppercase tracking-wider inline-flex items-center gap-2"
-                >
-                  <Github className="w-4 h-4" />
-                  <span>Repository</span>
-                </a>
-              )}
-            </div>
+            {(project.links?.live || project.links?.github) && (
+              <div className="flex flex-wrap gap-4 pt-2">
+                {project.links?.live && (
+                  <a
+                    href={project.links.live}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="px-6 py-3 rounded-full bg-black text-white hover:bg-neutral-800 transition-colors text-xs font-bold uppercase tracking-wider inline-flex items-center gap-2"
+                  >
+                    <span>Live Project</span>
+                    <ExternalLink className="w-4 h-4" />
+                  </a>
+                )}
+                {project.links?.github && (
+                  <a
+                    href={project.links.github}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="px-6 py-3 rounded-full border border-black hover:bg-black hover:text-white transition-colors text-xs font-bold uppercase tracking-wider inline-flex items-center gap-2"
+                  >
+                    <Github className="w-4 h-4" />
+                    <span>Repository</span>
+                  </a>
+                )}
+              </div>
+            )}
 
             {/* Problem Statement */}
             {project.problem && (
@@ -143,6 +145,20 @@ export default function ProjectDetailPage() {
                     <div key={i} className="flex items-center gap-2 text-sm font-semibold text-foreground">
                       <CheckCircle2 className="w-4 h-4 text-black shrink-0" />
                       <span>{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Full High-Resolution Artifact Gallery */}
+            {project.screenshots && project.screenshots.length > 0 && (
+              <div className="space-y-4 pt-6 border-t border-border">
+                <h3 className="font-extrabold text-xl tracking-tight text-foreground">High-Resolution Previews</h3>
+                <div className="grid grid-cols-1 gap-4">
+                  {project.screenshots.map((img, i) => (
+                    <div key={i} className="rounded-xl overflow-hidden border border-border bg-stone-50 shadow-sm">
+                      <img src={img} alt={`${project.title} artifact ${i + 1}`} className="w-full h-auto object-cover" />
                     </div>
                   ))}
                 </div>

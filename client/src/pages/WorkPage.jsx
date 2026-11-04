@@ -93,7 +93,7 @@ export default function WorkPage() {
                     <img
                       src={proj.thumbnail}
                       alt={proj.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors flex flex-col justify-end p-6 text-white">
                       <div className="text-xs uppercase font-mono tracking-wider opacity-80 mb-1">
@@ -133,7 +133,7 @@ export default function WorkPage() {
                   <img
                     src={proj.thumbnail}
                     alt={proj.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
                 <div className="p-6 flex flex-col flex-grow justify-between">

@@ -1,90 +1,228 @@
 export const initialProjects = [
   {
     id: "project-001",
-    slug: "zenith-ui-design-system",
-    title: "Zenith Design System & UI Kit",
-    description: "An accessible, editorial design system crafted for high-density SaaS workflows and editorial platforms.",
+    slug: "bitanic-precision-agriculture",
+    title: "Bitanic — Precision Agriculture Catalog & Ecosystem",
+    description: "Product catalog and hardware specification presentation for the Rapid Soil Checker (RSC Portable & Pro) agricultural IoT monitoring ecosystem.",
     category: "UI Design",
-    technologies: ["Figma", "Tailwind CSS", "React", "Design Tokens"],
-    thumbnail: "/assets/projects/zenith-preview.svg",
+    technologies: ["Figma", "UI Design", "Product Catalog", "Design Systems"],
+    thumbnail: "/assets/projects/design/bitanic.png",
     featured: true,
-    role: "Lead UI/UX Designer & Prototyper",
+    role: "UI/UX & Product Designer",
     year: "2026",
-    overview: "Zenith was created to bridge high-aesthetic editorial typography with functional, accessible interaction components. It emphasizes micro-interactions, dark/light harmonic palettes, and responsive layouts.",
-    problem: "Modern design systems often prioritize cookie-cutter enterprise layouts over distinctive typography and memorable brand identity, resulting in sterile web interfaces.",
+    overview: "Bitanic is a comprehensive product catalog and digital specification interface developed for the Rapid Soil Checker (RSC) device series. The system details portable and pro IoT hardware used by farmers to measure soil pH, NPK nutrients, moisture, temperature, and electrical conductivity with cloud and edge monitoring.",
+    problem: "Agricultural hardware specifications are often dense and difficult for farmers and stakeholders to digest, requiring a clean, accessible layout that balances technical accuracy with intuitive visual hierarchy.",
     process: [
-      "Audited typography scale and vertical grid alignment inspired by architectural publications",
-      "Created tokenized color palettes with accessible APCA contrast algorithms",
-      "Engineered micro-interaction states with 60fps Framer Motion prototypes",
-      "Tested usability with cross-platform interactive previews"
+      "Analyzed agronomic sensor metrics and hardware specifications (NPK, pH, temperature, EC, power constraints)",
+      "Structured product variants (Portable vs. Pro) with clear comparative pricing and feature matrices",
+      "Created an agricultural green and dark-slate editorial palette that reflects nature and technology",
+      "Designed iconography and structured feature lists for edge & cloud monitoring capabilities"
     ],
     responsibilities: [
-      "Visual hierarchy and tokenized styling architecture",
-      "Figma component variants with auto-layout v5",
-      "Interactive component documentation and spec sheets",
-      "Front-end prototyping with Tailwind and React"
+      "Layout composition, typography, and visual hierarchy",
+      "Hardware specification tables and comparison charts",
+      "Product presentation and feature callout design"
     ],
     screenshots: [
-      "/assets/projects/zenith-preview.svg"
+      "/assets/projects/design/bitanic.png"
     ],
     outcomes: [
-      "Reduced visual design debt by 40% across component implementations",
-      "Achieved 100% WCAG AAA rating on body typography scales",
-      "Adopted by multiple community frontend contributors"
+      "Streamlined pre-order catalog readability across desktop and digital distribution formats",
+      "Standardized IoT sensor specification visualization for agronomy partners"
     ],
     links: {
-      live: "https://example.com/zenith",
-      github: "https://github.com/example/zenith-design-system"
+      live: "",
+      github: ""
     }
   },
   {
     id: "project-002",
-    slug: "flowcraft-web-app",
-    title: "Flowcraft Interactive Studio",
-    description: "A high-performance web application designed for canvas-based visual workflow automation and mind mapping.",
-    category: "Web Development",
-    technologies: ["React", "TypeScript", "Canvas API", "Tailwind CSS"],
-    thumbnail: "/assets/projects/flowcraft-preview.svg",
+    slug: "wedding-organizer-experience",
+    title: "Wedding Organizer (WO) — Service & Package Experience",
+    description: "Exclusive wedding organizer service landing interface highlighting priority planning, dedicated wedding assistant coordination, and package tiers.",
+    category: "UI Design",
+    technologies: ["Figma", "Web Design", "Editorial Layout", "Typography"],
+    thumbnail: "/assets/projects/design/wo.png",
     featured: true,
-    role: "Frontend Developer",
-    year: "2025",
-    overview: "Flowcraft is an interactive browser workspace allowing designers and developers to visually diagram system logic with zero input latency and organic smooth pan/zoom dynamics.",
-    problem: "Heavy visual diagramming tools often suffer from dropped frames and clunky viewport navigation on standard laptops.",
+    role: "UI Designer",
+    year: "2026",
+    overview: "An editorial web layout designed for a boutique wedding organizer studio. The interface presents exclusive package options, such as the Silver Packet, emphasizing an attentive 8-person professional crew and year-long planning guidance.",
+    problem: "Wedding planning websites frequently feel cluttered and stressful; the objective was to design a serene, elegant editorial experience that conveys tranquility and high-touch hospitality.",
     process: [
-      "Benchmarked HTML5 Canvas versus SVG DOM nodes for rendering thousands of interconnected nodes",
-      "Implemented dirty-rect rendering and requestAnimationFrame viewport culling",
-      "Designed an ultra-clean monochrome editorial UI to keep focus on user diagrams"
+      "Selected an editorial serif and warm neutral palette to evoke timeless celebrations",
+      "Curated visual composition with architectural and natural venue vignettes",
+      "Structured benefit callouts focusing on peace of mind and coordinator expertise"
     ],
     responsibilities: [
-      "Canvas rendering engine and smooth infinite canvas pan/zoom",
-      "State synchronization and undo/redo history trees",
-      "Responsive toolbar and keyboard shortcut mapping"
+      "Typography selection and editorial text layout",
+      "Visual balance and venue imagery curation",
+      "Service package hierarchy and call-to-action placement"
     ],
     screenshots: [
-      "/assets/projects/flowcraft-preview.svg"
+      "/assets/projects/design/wo.png"
     ],
     outcomes: [
-      "Maintained rock-solid 60 FPS under stress tests with 1,500+ active nodes",
-      "Intuitive keyboard-driven navigation praised by early beta testers"
+      "Elevated boutique brand perception with a clean, high-fashion editorial aesthetic",
+      "Clarified package deliverables and timeline booking milestones"
     ],
     links: {
-      live: "https://example.com/flowcraft",
-      github: "https://github.com/example/flowcraft-app"
+      live: "",
+      github: ""
     }
   },
   {
     id: "project-003",
+    slug: "ailand-crowdfunding-platform",
+    title: "AILAND — Crowdfunding Land & Property Investment",
+    description: "Modern crowdfunding web application democratizing land and property investment through AI-powered risk assessment and transparent issuance workflows.",
+    category: "Web Development",
+    technologies: ["React", "Tailwind CSS", "JavaScript", "REST API"],
+    thumbnail: "/assets/projects/web/ailand.png",
+    featured: true,
+    role: "Frontend Developer",
+    year: "2025",
+    overview: "AILAND (PT Ailand Global Investments) is a digital crowdfunding platform designed to make property and agricultural land investments accessible, secure, and transparent. The web interface features investment catalogs, issuance onboarding, and partner ecosystem integration.",
+    problem: "Real estate and land investments traditionally demand heavy capital and opaque legal paperwork, leaving retail investors without accessible entry points.",
+    process: [
+      "Developed high-contrast hero layouts with AI visualization overlays",
+      "Implemented streamlined onboarding navigation covering Investment, Issuance, and Partner Portals",
+      "Engineered responsive partner carousels and investment calculator components"
+    ],
+    responsibilities: [
+      "Frontend interface implementation and responsive layouts",
+      "Interactive investment exploration components and CTAs",
+      "Cross-browser performance optimization"
+    ],
+    screenshots: [
+      "/assets/projects/web/ailand.png"
+    ],
+    outcomes: [
+      "Delivered a credible, institutional fintech landing experience",
+      "Provided smooth responsive viewing across mobile and widescreen monitors"
+    ],
+    links: {
+      live: "",
+      github: ""
+    }
+  },
+  {
+    id: "project-004",
+    slug: "helpme-admin-dashboard",
+    title: "HelpMe! — On-Demand Services Operations Dashboard",
+    description: "Comprehensive administrative dashboard managing service partners (Mitra), client accounts, categorized task requests, and real-time order statistics.",
+    category: "Web Development",
+    technologies: ["React", "Data Visualization", "Tailwind CSS", "Dashboard UI"],
+    thumbnail: "/assets/projects/web/helpme.png",
+    featured: true,
+    role: "Frontend & Dashboard Developer",
+    year: "2025",
+    overview: "HelpMe! is an operations management console for an on-demand task and home services platform. Administrators can oversee business operations, track partner versus client ratios, manage service categories (odd jobs, household tasks, vehicle assistance), and evaluate quarterly order volume.",
+    problem: "Operational teams managing multi-category service marketplaces face information overload without clear data visualizations and consolidated partner management tools.",
+    process: [
+      "Designed collapsible navigation menus grouping business operations, users, and service categories",
+      "Integrated yearly and quarterly bar charts for order volume and activity forecasting",
+      "Built clean donut charts depicting mitra-to-client ratio distributions"
+    ],
+    responsibilities: [
+      "Dashboard layout architecture and responsive data views",
+      "Chart components and filter controls (Yearly, Category, Status)",
+      "User role and partner management views"
+    ],
+    screenshots: [
+      "/assets/projects/web/helpme.png"
+    ],
+    outcomes: [
+      "Reduced operational navigation overhead for administrators managing multiple service categories",
+      "Clear visual data indicators enabling rapid quarterly performance reviews"
+    ],
+    links: {
+      live: "",
+      github: ""
+    }
+  },
+  {
+    id: "project-005",
+    slug: "prakerin-internship-portal",
+    title: "Prakerin.id — Vocational Internship & Career Portal",
+    description: "Digital platform bridging vocational students with industrial work internships (PKL) at top enterprise and technology companies.",
+    category: "Web Development",
+    technologies: ["React", "Tailwind CSS", "Search & Filter", "Responsive UI"],
+    thumbnail: "/assets/projects/web/prakerin.png",
+    featured: true,
+    role: "Frontend Developer",
+    year: "2025",
+    overview: "Prakerin.id facilitates industrial training placement for students, offering search and discovery by job discipline (Frontend Development, Cybersecurity, Backend Engineering), verified company listings, and simplified application workflows.",
+    problem: "Vocational students often struggle to find verified, high-quality industrial internship placements matching their specific curriculum skills.",
+    process: [
+      "Crafted an encouraging, accessible user interface with friendly illustrations and approachable typography",
+      "Engineered an instant search bar with popular category filter pills",
+      "Streamlined the registration and candidate application pipeline"
+    ],
+    responsibilities: [
+      "Frontend UI engineering and component design",
+      "Search and tag filtering interactions",
+      "Responsive navigation and authentication modals"
+    ],
+    screenshots: [
+      "/assets/projects/web/prakerin.png"
+    ],
+    outcomes: [
+      "Provided an intuitive, student-centric job search experience",
+      "Unified diverse vocational technical fields under an organized category hierarchy"
+    ],
+    links: {
+      live: "",
+      github: ""
+    }
+  },
+  {
+    id: "project-006",
+    slug: "skripz-thesis-platform",
+    title: "SkripZ — Academic Thesis Management Platform",
+    description: "Collaborative academic portal facilitating real-time undergraduate thesis tracking, advisor feedback, and secure institutional manuscript archiving.",
+    category: "Web Development",
+    technologies: ["React", "Workflow Automation", "Tailwind CSS", "Academic Systems"],
+    thumbnail: "/assets/projects/web/skripz.png",
+    featured: true,
+    role: "Frontend Engineer",
+    year: "2025",
+    overview: "SkripZ was built to modernize university thesis governance. In partnership with institutions including IPB University, Makerindo, and Politeknik Piksi Ganesha, the system enables transparent milestones, chapter revisions, and advisor-student communications.",
+    problem: "Traditional academic thesis tracking through informal messaging or manual paper reviews leads to lost files, delayed feedback, and unclear graduation progress.",
+    process: [
+      "Mapped user flows between students, primary advisors, and department administrators",
+      "Designed an encouraging educational interface with clear call-to-action registration",
+      "Integrated partner institutional credentials and structured guidance sections"
+    ],
+    responsibilities: [
+      "Frontend system architecture and UI components",
+      "Academic timeline and document tracking displays",
+      "Institutional branding and partner showcase integration"
+    ],
+    screenshots: [
+      "/assets/projects/web/skripz.png"
+    ],
+    outcomes: [
+      "Collaborated with academic and technology partners across universities",
+      "Delivered a transparent, organized framework for final project management"
+    ],
+    links: {
+      live: "",
+      github: ""
+    }
+  },
+  {
+    id: "project-007",
     slug: "fast-spring-motion-npm",
     title: "fast-spring-motion (npm package)",
     description: "A published lightweight zero-dependency physics spring solver for high-performance React and DOM animations.",
     category: "Open Source",
     technologies: ["TypeScript", "npm", "Microbenchmarks", "Rollup"],
-    thumbnail: "/assets/projects/npm-preview.svg",
-    featured: true,
+    thumbnail: "/assets/projects/package/npm-package.svg",
+    featured: false,
     role: "Creator & Maintainer",
     year: "2025",
     overview: "Published on npm, fast-spring-motion delivers RK4 spring physics numerical integration in less than 1.8 KB minified, enabling silky smooth organic transitions without bundle bloat.",
-    problem: "Full animation engines like Framer Motion or GSAP can be excessive for lightweight UI widgets needing only organic elastic interpolation.",
+    problem: "Full animation engines can be excessive for lightweight UI widgets needing only organic elastic interpolation.",
     process: [
       "Implemented 4th-order Runge-Kutta numerical solver for mass-spring-damper equations",
       "Profiled garbage collector pressure and eliminated object allocations in inner loops",
@@ -103,41 +241,36 @@ export const initialProjects = [
       "Under 1.8 KB minified bundle footprint with zero external dependencies"
     ],
     links: {
-      live: "https://www.npmjs.com/package/fast-spring-motion",
-      github: "https://github.com/example/fast-spring-motion"
+      live: "https://www.npmjs.com",
+      github: "https://github.com"
     }
+  }
+];
+
+export const initialVolunteers = [
+  {
+    id: "vol-001",
+    organization: "[Organization / Initiative Name]",
+    role: "[Volunteer Mentor & Facilitator]",
+    date: "[2024]",
+    description: "[Brief description of your volunteer contribution, activities, and community impact]",
+    image: "/assets/syifa/syifa-4.jpeg"
   },
   {
-    id: "project-004",
-    slug: "aurora-editorial-reader",
-    title: "Aurora Editorial Publishing Platform",
-    description: "Minimalist digital reading experience focusing on fluid scroll transitions and typographic rhythm.",
-    category: "UI Design & Web App",
-    technologies: ["React", "Framer Motion", "Tailwind CSS", "Vite"],
-    thumbnail: "/assets/projects/aurora-preview.svg",
-    featured: false,
-    role: "Design Engineer",
-    year: "2025",
-    overview: "A modern web publication engine that mimics luxury print magazines with responsive layouts and non-intrusive micro-animations.",
-    problem: "Online publications are overwhelmed with popups, banners, and layout shifts that ruin the reading experience.",
-    process: [
-      "Studied Swiss graphic design layouts and typographic grid systems",
-      "Integrated subtle scroll-linked typography reveals and reading progress markers"
-    ],
-    responsibilities: [
-      "Editorial UI design and responsive typesetting",
-      "Framer Motion layout animations and reading mode transitions"
-    ],
-    screenshots: [
-      "/assets/projects/aurora-preview.svg"
-    ],
-    outcomes: [
-      "Delivered average session duration increase of 65% in test cohorts"
-    ],
-    links: {
-      live: "https://example.com/aurora",
-      github: "https://github.com/example/aurora-reader"
-    }
+    id: "vol-002",
+    organization: "[Student & Campus Community]",
+    role: "[Community Event Coordinator]",
+    date: "[2023 - 2024]",
+    description: "[Brief description of your community event organization, peer support, or technical workshop]",
+    image: "/assets/syifa/syifa-5.jpeg"
+  },
+  {
+    id: "vol-003",
+    organization: "[Social / Educational Outreach]",
+    role: "[Volunteer Team Member]",
+    date: "[2023]",
+    description: "[Brief description of collaborative field work, mentoring sessions, or social contribution]",
+    image: "/assets/syifa/syifa-2.jpeg"
   }
 ];
 

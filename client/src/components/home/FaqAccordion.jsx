@@ -7,25 +7,29 @@ export default function FaqAccordion() {
 
   const faqs = [
     {
-      q: "How do you start a new project?",
-      a: "We start by listening. Every project begins with a short discovery phase where we learn about your goals, challenges, and expectations. From there, we define the creative direction, map out deliverables, and set a timeline that balances clarity with craft."
+      q: "What do you enjoy working on?",
+      a: "I enjoy working across different parts of the digital product process, from making sense of an idea to shaping the interface and checking that everything works as it should."
     },
     {
-      q: "Can you help with strategy, not just design?",
-      a: "Yes. Design without strategy is just decoration. We help teams articulate value propositions, user journeys, brand voice, and technical architecture before writing code or assembling layouts."
+      q: "What tools do you usually work with?",
+      a: "I usually work with Figma, React, Tailwind CSS, and npm package development."
     },
     {
-      q: "What technologies do you specialize in?",
-      a: "We build high-performance web applications using modern React, Vite, Node/Express, Tailwind CSS, Framer Motion, and physics animation solvers with zero unnecessary dependencies."
+      q: "How do you approach a new project?",
+      a: "Every project starts with a question. I take time to understand the problem, the people it affects, and what the project needs to achieve before jumping into solutions."
     },
     {
-      q: "How do we collaborate together?",
-      a: "We work seamlessly across global timezones using asynchronous documentation, interactive Figma component reviews, and version-controlled GitHub repositories."
+      q: "Are you open to collaborations?",
+      a: "Yes, I'm always open to collaborations. If you have a project in mind, feel free to reach out!"
+    },
+    {
+      q: "Where can I see more of your work?",
+      a: "You can see more of my work on my portfolio page. I'm always updating it with new projects and work I'm proud of."
     }
   ];
 
   return (
-    <div className="w-full py-24 border-b border-border bg-white px-8 md:px-12">
+    <div className="w-full">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
         {/* Left Column Title */}
         <div className="lg:col-span-4">

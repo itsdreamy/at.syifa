@@ -38,7 +38,7 @@ export default function ProjectCard({ project, columnOffset = 0 }) {
             src={project.thumbnail}
             alt={project.title}
             loading="lazy"
-            className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 ease-out"
+            className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500 ease-out"
           />
           <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-300" />
           

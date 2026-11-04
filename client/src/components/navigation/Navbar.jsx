@@ -24,7 +24,7 @@ export default function Navbar() {
           to="/" 
           className="text-xl md:text-2xl font-bold tracking-tight text-foreground hover:opacity-70 transition-opacity flex items-center gap-1"
         >
-          <span>at.syifa®</span>
+          <span>at.syifa</span>
         </Link>
 
         {/* Desktop Nav Items */}

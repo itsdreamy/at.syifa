@@ -44,7 +44,7 @@ export default function CapybaraAssistant() {
         aria-label="Wake Capybara Assistant"
       >
         <span className="text-base">🦫</span>
-        <span>Wake Mascot</span>
+        <span>Wake the Capy!</span>
       </button>
     );
   }
@@ -64,8 +64,7 @@ export default function CapybaraAssistant() {
             {/* Top bubble controls */}
             <div className="flex items-center justify-between pb-1.5 mb-1.5 border-b border-border/60">
               <span className="font-mono text-[10px] text-secondary flex items-center gap-1 uppercase tracking-wider">
-                <Sparkles className="w-3 h-3 text-capy-brown" />
-                Capy Assistant
+                Hi! It's Capy here!
               </span>
               <button
                 onClick={() => setBubbleVisible(false)}
@@ -87,13 +86,7 @@ export default function CapybaraAssistant() {
 
             {/* Click hint */}
             <div className="mt-2 pt-1.5 text-[10px] font-mono text-muted flex items-center justify-between">
-              <span>Click capy for next thought</span>
-              <button
-                onClick={nextMessage}
-                className="text-foreground hover:underline font-semibold"
-              >
-                Next ↻
-              </button>
+              <span className='ml-auto'>Click capy for next thought</span>
             </div>
           </motion.div>
         )}

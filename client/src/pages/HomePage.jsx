@@ -1,24 +1,36 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowRight, ArrowUpRight, Award, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, Award } from 'lucide-react';
 import HeroCardStack from '../components/home/HeroCardStack';
 import KineticMarquee from '../components/home/KineticMarquee';
 import ProcessTimeline from '../components/home/ProcessTimeline';
 import FaqAccordion from '../components/home/FaqAccordion';
+import VolunteerSection from '../components/home/VolunteerSection';
+import StackedSection from '../components/home/StackedSection';
 import CapybaraPool from '../components/capybara/CapybaraPool';
 import ImageModal from '../components/common/ImageModal';
-import { initialProjects } from '../data/portfolioData';
+import { initialProjects, initialVolunteers } from '../data/portfolioData';
 import { portfolioApi } from '../services/api';
 
 export default function HomePage() {
   const [projects, setProjects] = useState(initialProjects);
   const [achievements, setAchievements] = useState([]);
+  const [volunteer, setVolunteer] = useState(initialVolunteers);
   const [modalImage, setModalImage] = useState(null);
 
   useEffect(() => {
-    portfolioApi.getProjects().then((data) => data && setProjects(data)).catch(() => {});
-    portfolioApi.getAchievements().then((data) => data && setAchievements(data)).catch(() => {});
+    portfolioApi.getProjects()
+      .then((data) => data && data.length > 0 && setProjects(data))
+      .catch(() => {});
+
+    portfolioApi.getAchievements()
+      .then((data) => data && data.length > 0 && setAchievements(data))
+      .catch(() => {});
+
+    portfolioApi.getVolunteer()
+      .then((data) => data && data.length > 0 && setVolunteer(data))
+      .catch(() => {});
   }, []);
 
   return (
@@ -29,11 +41,11 @@ export default function HomePage() {
         <div className="flex flex-col md:flex-row items-start justify-between gap-6 z-20">
           <div className="max-w-md">
             <p className="text-secondary text-sm md:text-base font-normal leading-relaxed">
-              <strong className="text-foreground font-bold">at.syifa®</strong> — a design studio shaping brands and digital experiences through motion, clarity, and timeless craft. Based online, working globally, we help ambitious teams express who they are and what they stand for.
+              <strong className="text-foreground font-bold">Hi, I'm Syifa!</strong> — a designer and developer who enjoys turning ideas into thoughtful digital experiences. I explore the space between design, technology, and the little details that make products feel right.
             </p>
           </div>
           <div className="font-bold text-xs md:text-sm tracking-widest text-foreground">
-            © 2024-26
+            © 2026
           </div>
         </div>
 
@@ -41,7 +53,7 @@ export default function HomePage() {
         <div className="relative my-8 py-6 w-full flex flex-col items-center justify-center select-none">
           {/* Massive Display Title */}
           <h1 className="text-[15vw] font-extrabold tracking-tightest text-foreground uppercase leading-none text-center w-full">
-            at.syifa®
+            at.syifa
           </h1>
 
           {/* Floating Interactive Card Deck (fans out on hover) */}
@@ -60,7 +72,7 @@ export default function HomePage() {
             <ArrowRight className="w-4 h-4" />
           </Link>
           <div className="hidden sm:block">
-            SUMMA CUM LAUDE · GPA 3.97
+            Cumulative GPA 3.98
           </div>
         </div>
       </section>
@@ -68,16 +80,16 @@ export default function HomePage() {
       {/* 2. KINETIC MARQUEE SECTION (matches landingpage.mp4 frame_10) */}
       <KineticMarquee />
 
-      {/* 3. OUR SERVICES (matches landingpage.mp4 frame_12) */}
+      {/* 3. SERVICES I OFFER */}
       <section className="py-24 border-b border-border px-8 md:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
           {/* Left Sticky Prompt */}
           <div className="lg:col-span-4 space-y-6">
             <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-foreground">
-              Our Services
+              What I Do
             </h2>
             <p className="text-secondary text-sm font-normal max-w-xs leading-relaxed">
-              If you're looking for clarity in design and resilient engineering, let's build it together.
+              I enjoy working across different parts of the digital product process, from making sense of an idea to shaping the interface and checking that everything works as it should.
             </p>
             <div>
               <Link
@@ -94,10 +106,13 @@ export default function HomePage() {
           <div className="lg:col-span-8 space-y-16">
             <div className="space-y-4">
               <h3 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-foreground">
-                A/ We guide ideas from concept to execution, shaping visual and narrative direction for consistent expression across every touchpoint.
+                Interface &amp; Experience Design
               </h3>
+              <p className="text-secondary text-sm font-normal max-w-xl leading-relaxed">
+                I turn ideas and requirements into clear, thoughtful interfaces. I care about visual hierarchy, usability, and the small details that make digital experiences easier to navigate.
+              </p>
               <div className="flex flex-wrap gap-2 pt-2">
-                {['Visual Direction', 'Campaign Concepts', 'Art Direction for Digital Products', 'Design Tokens', 'Design Systems'].map((pill) => (
+                {['UI Design', 'Wireframing', 'Prototyping', 'Visual Design', 'Design Systems'].map((pill) => (
                   <span key={pill} className="px-4 py-1.5 rounded-full bg-[#F4F4F2] text-xs font-bold text-foreground">
                     {pill}
                   </span>
@@ -107,10 +122,13 @@ export default function HomePage() {
 
             <div className="space-y-4">
               <h3 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-foreground">
-                B/ We engineer high-performance web applications that move with intention, combining fluid spring physics with rock-solid reliability.
+                Web Development
               </h3>
+              <p className="text-secondary text-sm font-normal max-w-xl leading-relaxed">
+                I enjoy bringing designs to life through code, experimenting with interactions, and building responsive experiences. I'm especially interested in how thoughtful implementation can make an interface feel more engaging.
+              </p>
               <div className="flex flex-wrap gap-2 pt-2">
-                {['React.js Architecture', 'TypeScript', 'Framer Motion', 'Micro-interactions', 'Published npm Packages'].map((pill) => (
+                {['React JavaScript', 'Express.js', 'Tailwind CSS', 'npm Package Development'].map((pill) => (
                   <span key={pill} className="px-4 py-1.5 rounded-full bg-[#F4F4F2] text-xs font-bold text-foreground">
                     {pill}
                   </span>
@@ -120,10 +138,13 @@ export default function HomePage() {
 
             <div className="space-y-4">
               <h3 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-foreground">
-                C/ We audit quality control and accessibility to ensure every interaction meets WCAG AAA standards across all devices.
+                Quality &amp; Documentation
               </h3>
+              <p className="text-secondary text-sm font-normal max-w-xl leading-relaxed">
+                My experience in quality control and technical writing has taught me to look beyond how something looks. I pay attention to functionality, consistency, clarity, and how people understand and use a product.
+              </p>
               <div className="flex flex-wrap gap-2 pt-2">
-                {['Quality Assurance (QC)', 'WCAG AAA Auditing', 'Cross-Browser Hardening', 'Stress Testing'].map((pill) => (
+                {['Quality Control', 'Testing', 'Technical Writing', 'Documentation', 'Attention to Detail'].map((pill) => (
                   <span key={pill} className="px-4 py-1.5 rounded-full bg-[#F4F4F2] text-xs font-bold text-foreground">
                     {pill}
                   </span>
@@ -134,120 +155,152 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 4. SELECTED PROJECTS PREVIEW */}
-      <section className="py-24 border-b border-border px-8 md:px-12 bg-[#FAFAF9]">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 pb-6 border-b border-border">
-          <div>
-            <div className="text-xs uppercase font-bold tracking-widest text-muted mb-2">Featured Work</div>
-            <h2 className="text-4xl sm:text-6xl font-extrabold tracking-tightest uppercase text-foreground">
-              Selected Projects
-            </h2>
-          </div>
-          <Link
-            to="/work"
-            className="mt-4 md:mt-0 font-bold text-sm text-foreground hover:opacity-60 transition-opacity flex items-center gap-1.5"
-          >
-            <span>View All Works ({projects.length})</span>
-            <ArrowUpRight className="w-4 h-4" />
-          </Link>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.slice(0, 3).map((proj) => (
+      {/* 4. OVERLAPPING STACKED SECTIONS: Selected Work through FAQ */}
+      <div className="relative w-full">
+        {/* Layer 1: Selected Work */}
+        <StackedSection index={0} total={5} id="work" bgColor="bg-[#FAFAF9]">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 pb-6 border-b border-border">
+            <div>
+              <div className="text-xs uppercase font-bold tracking-widest text-muted mb-2">
+                A Few Things I've Worked On
+              </div>
+              <h2 className="text-4xl sm:text-6xl font-extrabold tracking-tightest uppercase text-foreground">
+                Selected Work
+              </h2>
+            </div>
             <Link
-              key={proj.id}
-              to={`/work/${proj.slug}`}
-              className="group bg-white rounded-2xl overflow-hidden border border-border hover:border-black transition-colors flex flex-col shadow-sm"
+              to="/work"
+              className="mt-4 md:mt-0 font-bold text-sm text-foreground hover:opacity-60 transition-opacity flex items-center gap-1.5"
             >
-              <div className="aspect-[16/10] bg-black overflow-hidden relative">
-                <img
-                  src={proj.thumbnail}
-                  alt={proj.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-              </div>
-              <div className="p-6 flex flex-col flex-grow justify-between">
-                <div>
-                  <div className="text-xs uppercase font-bold text-muted mb-1">{proj.category}</div>
-                  <h3 className="text-2xl font-extrabold tracking-tight text-foreground mb-2 group-hover:text-black">
-                    {proj.title}
-                  </h3>
-                  <p className="text-secondary text-sm line-clamp-2">{proj.description}</p>
-                </div>
-                <div className="pt-4 mt-4 border-t border-border flex items-center justify-between text-xs font-bold uppercase tracking-wider text-foreground">
-                  <span>View Case Study</span>
-                  <ArrowUpRight className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-                </div>
-              </div>
+              <span>Explore All Projects ({projects.length})</span>
+              <ArrowUpRight className="w-4 h-4" />
             </Link>
-          ))}
-        </div>
-      </section>
+          </div>
 
-      {/* 5. THE PROCESS GANTT TIMELINE (matches landingpage.mp4 frame_20) */}
-      <ProcessTimeline />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {projects.slice(0, 3).map((proj) => (
+              <Link
+                key={proj.id}
+                to={`/work/${proj.slug}`}
+                className="group bg-white rounded-2xl overflow-hidden border border-border hover:border-black transition-colors flex flex-col shadow-sm"
+              >
+                <div className="aspect-[16/10] bg-stone-100 overflow-hidden relative">
+                  <img
+                    src={proj.thumbnail}
+                    alt={proj.title}
+                    className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
+                  />
+                </div>
+                <div className="p-6 flex flex-col flex-grow justify-between">
+                  <div>
+                    <div className="text-xs uppercase font-bold text-muted mb-1">
+                      {proj.category}
+                    </div>
+                    <h3 className="text-2xl font-extrabold tracking-tight text-foreground mb-2 group-hover:text-black">
+                      {proj.title}
+                    </h3>
+                    <p className="text-secondary text-sm line-clamp-2">
+                      {proj.description}
+                    </p>
+                  </div>
+                  <div className="pt-4 mt-4 border-t border-border flex items-center justify-between text-xs font-bold uppercase tracking-wider text-foreground">
+                    <span>Take a Closer Look</span>
+                    <ArrowUpRight className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </StackedSection>
 
-      {/* 6. ACHIEVEMENTS & ACADEMIC HIGHLIGHTS */}
-      <section className="py-24 border-b border-border px-8 md:px-12 bg-white">
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-12 pb-6 border-b border-border">
-          <div>
-            <div className="text-xs uppercase font-bold tracking-widest text-muted mb-2">Excellence</div>
+        {/* Layer 2: Process Timeline */}
+        <StackedSection index={1} total={5} id="timeline" bgColor="bg-white">
+          <div className="mb-10 pb-6 border-b border-border">
+            <div className="text-xs uppercase font-bold tracking-widest text-muted mb-2">
+              Process &amp; Cadence
+            </div>
             <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-foreground">
-              Academic Honors &amp; Recognition
+              How I Approach Building
             </h2>
           </div>
-          <div className="mt-4 sm:mt-0 font-bold text-sm text-secondary">
-            GPA 3.97 · Summa Cum Laude
-          </div>
-        </div>
+          <ProcessTimeline />
+        </StackedSection>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {achievements.map((ach) => (
-            <div
-              key={ach.id}
-              className="p-6 rounded-2xl bg-surface border border-border flex flex-col justify-between group hover:border-black transition-colors"
-            >
-              <div>
-                <div className="text-xs uppercase font-bold text-muted mb-3 flex items-center justify-between">
-                  <span>{ach.category}</span>
-                  <span>{ach.date}</span>
+        {/* Layer 3: Academic Highlights & Recognition */}
+        <StackedSection index={2} total={5} id="achievements" bgColor="bg-[#FAFAF9]">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-12 pb-6 border-b border-border">
+            <div>
+              <div className="text-xs uppercase font-bold tracking-widest text-muted mb-2">
+                A Little Progress Along the Way
+              </div>
+              <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-foreground">
+                Academic Highlights &amp; Recognition
+              </h2>
+              <p className="text-secondary mt-2 text-sm font-normal max-w-xl leading-relaxed">
+                Some milestones I'm proud of, from academic achievements to opportunities that challenged me to learn, grow, and try something new.
+              </p>
+            </div>
+            <div className="mt-4 sm:mt-0 font-bold text-sm text-secondary">
+              Cumulative GPA 3.98
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {achievements.map((ach) => (
+              <div
+                key={ach.id}
+                className="p-6 rounded-2xl bg-white border border-border flex flex-col justify-between group hover:border-black transition-colors shadow-sm"
+              >
+                <div>
+                  <div className="text-xs uppercase font-bold text-muted mb-3 flex items-center justify-between">
+                    <span>{ach.category}</span>
+                    <span>{ach.date}</span>
+                  </div>
+
+                  {ach.image && (
+                    <div
+                      onClick={() => setModalImage({ src: ach.image, title: ach.title })}
+                      className="aspect-video w-full rounded-xl overflow-hidden bg-stone-100 mb-4 cursor-pointer relative group-hover:opacity-90 transition-opacity"
+                    >
+                      <img
+                        src={ach.image}
+                        alt={ach.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                        loading="lazy"
+                      />
+                    </div>
+                  )}
+
+                  <h3 className="font-extrabold text-xl text-foreground mb-2">
+                    {ach.title}
+                  </h3>
+                  <p className="text-secondary text-xs leading-relaxed">
+                    {ach.description}
+                  </p>
                 </div>
 
-                {ach.image && (
-                  <div
-                    onClick={() => setModalImage({ src: ach.image, title: ach.title })}
-                    className="aspect-video w-full rounded-xl overflow-hidden bg-stone-100 mb-4 cursor-pointer relative group-hover:opacity-90 transition-opacity"
-                  >
-                    <img
-                      src={ach.image}
-                      alt={ach.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                      loading="lazy"
-                    />
-                  </div>
-                )}
-
-                <h3 className="font-extrabold text-xl text-foreground mb-2">
-                  {ach.title}
-                </h3>
-                <p className="text-secondary text-xs leading-relaxed">
-                  {ach.description}
-                </p>
+                <div className="pt-4 mt-4 border-t border-border flex items-center justify-between text-xs font-bold text-muted">
+                  <span>Verified</span>
+                  <Award className="w-4 h-4 text-black" />
+                </div>
               </div>
+            ))}
+          </div>
+        </StackedSection>
 
-              <div className="pt-4 mt-4 border-t border-border flex items-center justify-between text-xs font-bold text-muted">
-                <span>Verified</span>
-                <Award className="w-4 h-4 text-black" />
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
+        {/* Layer 4: Volunteer Experience (BEYOND THE SCREEN - Placement immediately after Achievements & before FAQ) */}
+        <StackedSection index={3} total={5} id="volunteer" bgColor="bg-white">
+          <VolunteerSection volunteer={volunteer} />
+        </StackedSection>
 
-      {/* 7. FAQ ACCORDION (matches landingpage.mp4 frame_24) */}
-      <FaqAccordion />
+        {/* Layer 5: Questions / FAQ */}
+        <StackedSection index={4} total={5} id="faq" bgColor="bg-[#FAFAF9]">
+          <FaqAccordion />
+        </StackedSection>
+      </div>
 
-      {/* 8. THE CAPYBARA POOL (Interactive feature right before Contact) */}
+      {/* 5. THE CAPYBARA POOL (Signature interactive pool before contact, non-stacked) */}
       <CapybaraPool />
 
       {/* Image Modal Lightbox */}

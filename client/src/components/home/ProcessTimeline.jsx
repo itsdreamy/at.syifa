@@ -6,33 +6,37 @@ export default function ProcessTimeline() {
 
   const phases = [
     {
-      title: 'Discovery',
+      title: 'Understand',
       barStart: 'col-start-1',
       barSpan: 'col-span-3',
-      description: 'We start by listening. This phase is about understanding your goals, audience, and challenges — finding clarity before we begin designing.'
+      description:
+        'Every project starts with a question. I take time to understand the problem, the people it affects, and what the project needs to achieve before jumping into solutions.'
     },
     {
-      title: 'Strategy',
+      title: 'Explore',
       barStart: 'col-start-3',
       barSpan: 'col-span-3',
-      description: 'We translate insights into direction. Here, we define the concept, structure, and creative approach that shape your brand or digital product.'
+      description:
+        'With a clearer direction, I map out the structure, explore possible approaches, and decide what makes the most sense. This is where ideas begin to take shape.'
     },
     {
-      title: 'Design & Build',
+      title: 'Design & Create',
       barStart: 'col-start-5',
       barSpan: 'col-span-5',
-      description: 'Ideas take form. From visual identity to interactive experience, we design, prototype, and develop with precision and care.'
+      description:
+        'This is where things become tangible. I turn concepts into interfaces, build and test interactions, and refine the details to make the experience both useful and intuitive.'
     },
     {
-      title: 'Launch & Beyond',
+      title: 'Refine & Deliver',
       barStart: 'col-start-9',
       barSpan: 'col-span-4',
-      description: 'Delivery is only the beginning. We test, refine, and support after launch — ensuring the work performs and evolves over time.'
+      description:
+        "Before calling it finished, I review what I've made, check the details, and improve what needs work. I believe a good result comes from paying attention right up to the final step."
     }
   ];
 
   return (
-    <div className="w-full py-24 border-b border-border bg-white px-8 md:px-12">
+    <div className="w-full">
       {/* Visual Gantt Bar Track */}
       <div className="relative mb-16 select-none overflow-hidden">
         {/* Number scale 01 - 12 */}

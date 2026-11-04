@@ -15,7 +15,7 @@ export default function HeroCardStack() {
   const cards = [
     {
       id: 1,
-      image: '/assets/achievements/syifa-2.jpeg',
+      image: '/assets/syifa/syifa-2.jpeg',
       initialRotate: -12,
       hoverRotate: -22,
       hoverX: -90,
@@ -26,7 +26,7 @@ export default function HeroCardStack() {
     },
     {
       id: 2,
-      image: '/assets/achievements/syifa-3.jpeg',
+      image: '/assets/syifa/syifa-3.jpeg',
       initialRotate: 8,
       hoverRotate: 18,
       hoverX: 85,
@@ -37,7 +37,7 @@ export default function HeroCardStack() {
     },
     {
       id: 3,
-      image: '/assets/syifa-portrait.png',
+      image: '/assets/syifa/syifa-4.jpeg',
       initialRotate: -2,
       hoverRotate: 0,
       hoverX: 0,
