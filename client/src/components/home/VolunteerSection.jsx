@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { HeartHandshake, Calendar, ArrowUpRight } from 'lucide-react';
+import { HeartHandshake, Calendar, ArrowUpRight, Instagram, Play } from 'lucide-react';
 import ImageModal from '../common/ImageModal';
 
 export default function VolunteerSection({ volunteer = [] }) {
@@ -8,11 +8,10 @@ export default function VolunteerSection({ volunteer = [] }) {
 
   return (
     <div className="w-full">
-      {/* Section Header */}
-      <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-12 pb-6 border-b border-border">
+      {/* Section Header — no border-b (StackedSection provides visual separation via rounded top + shadow) */}
+      <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-10">
         <div className="space-y-3">
           <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-black" />
             <span className="text-xs uppercase font-extrabold tracking-widest text-muted">
               BEYOND THE SCREEN
             </span>
@@ -30,7 +29,7 @@ export default function VolunteerSection({ volunteer = [] }) {
         </p>
       </div>
 
-      {/* 3-Column Portrait Cards Grid (3 cols on desktop, 2 on tablet, 1 on mobile) */}
+      {/* 3-Column Portrait Cards Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {volunteer.map((item, idx) => (
           <motion.div
@@ -39,11 +38,11 @@ export default function VolunteerSection({ volunteer = [] }) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-50px' }}
             transition={{ duration: 0.5, delay: idx * 0.12, ease: 'easeOut' }}
-            className="group bg-surface rounded-2xl overflow-hidden border border-border hover:border-black transition-all duration-300 flex flex-col shadow-sm"
+            className="group bg-surface rounded-2xl overflow-hidden border border-border hover:border-black/40 hover:shadow-lg transition-all duration-300 flex flex-col"
           >
-            {/* Portrait Image Container (occupies most of the card's visual space with 3:4 or 4:5 ratio) */}
-            <div 
-              onClick={() => setModalImage({ src: item.image, title: `${item.organization} - ${item.role}` })}
+            {/* Portrait Image Container (3:4 ratio) */}
+            <div
+              onClick={() => setModalImage({ src: item.image, title: `${item.organization} — ${item.role}` })}
               className="relative w-full aspect-[3/4] overflow-hidden bg-stone-100 cursor-pointer"
             >
               <img
@@ -52,6 +51,8 @@ export default function VolunteerSection({ volunteer = [] }) {
                 className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 ease-out"
                 loading="lazy"
               />
+
+              {/* Hover overlay */}
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
                 <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white/90 backdrop-blur-sm text-foreground text-xs font-bold px-3 py-1.5 rounded-full shadow-md flex items-center gap-1.5">
                   <span>Enlarge Photo</span>
@@ -60,8 +61,8 @@ export default function VolunteerSection({ volunteer = [] }) {
               </div>
             </div>
 
-            {/* Content Details beneath portrait image */}
-            <div className="p-6 flex flex-col flex-grow justify-between space-y-4">
+            {/* Content beneath portrait image */}
+            <div className="p-5 flex flex-col flex-grow justify-between space-y-3">
               <div>
                 <div className="flex items-center justify-between text-xs font-bold uppercase tracking-wider text-muted mb-2">
                   <span className="flex items-center gap-1.5">
@@ -82,6 +83,19 @@ export default function VolunteerSection({ volunteer = [] }) {
                   {item.description}
                 </p>
               </div>
+
+              {/* Optional: Instagram source link at card bottom */}
+              {item.reelUrl && (
+                <a
+                  href={item.reelUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-xs font-bold text-muted hover:text-foreground transition-colors mt-1"
+                >
+                  <Instagram className="w-3.5 h-3.5" />
+                  <span>View on Instagram</span>
+                </a>
+              )}
 
               {item.contribution && (
                 <div className="pt-3 border-t border-border/70 text-xs font-mono text-muted">

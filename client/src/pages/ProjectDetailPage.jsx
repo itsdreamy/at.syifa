@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { ArrowLeft, ExternalLink, Github, CheckCircle2 } from 'lucide-react';
+import { ArrowLeft, ExternalLink, Github, CheckCircle2, Figma } from 'lucide-react';
 import { initialProjects } from '../data/portfolioData';
 import { portfolioApi } from '../services/api';
 
@@ -84,27 +84,46 @@ export default function ProjectDetailPage() {
             </div>
 
             {/* Action Buttons */}
-            {(project.links?.live || project.links?.github) && (
-              <div className="flex flex-wrap gap-4 pt-2">
+            {(project.links?.live || project.links?.github || project.links?.figma) && (
+              <div className="flex flex-wrap gap-3 pt-2">
                 {project.links?.live && (
                   <a
                     href={project.links.live}
                     target="_blank"
-                    rel="noreferrer"
+                    rel="noopener noreferrer"
                     className="px-6 py-3 rounded-full bg-black text-white hover:bg-neutral-800 transition-colors text-xs font-bold uppercase tracking-wider inline-flex items-center gap-2"
                   >
                     <span>Live Project</span>
-                    <ExternalLink className="w-4 h-4" />
+                    <ExternalLink className="w-3.5 h-3.5" />
+                  </a>
+                )}
+                {project.links?.figma && (
+                  <a
+                    href={project.links.figma}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-6 py-3 rounded-full bg-[#1E1E1E] text-white hover:bg-black transition-colors text-xs font-bold uppercase tracking-wider inline-flex items-center gap-2"
+                    title="Open design file in Figma"
+                  >
+                    {/* Figma logo inline SVG */}
+                    <svg className="w-3.5 h-3.5 shrink-0" viewBox="0 0 38 57" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M19 28.5a9.5 9.5 0 1 1 19 0 9.5 9.5 0 0 1-19 0z" fill="#1ABCFE"/>
+                      <path d="M0 47.5A9.5 9.5 0 0 1 9.5 38H19v9.5a9.5 9.5 0 0 1-19 0z" fill="#0ACF83"/>
+                      <path d="M19 0v19h9.5a9.5 9.5 0 0 0 0-19H19z" fill="#FF7262"/>
+                      <path d="M0 9.5A9.5 9.5 0 0 0 9.5 19H19V0H9.5A9.5 9.5 0 0 0 0 9.5z" fill="#F24E1E"/>
+                      <path d="M0 28.5A9.5 9.5 0 0 0 9.5 38H19V19H9.5A9.5 9.5 0 0 0 0 28.5z" fill="#A259FF"/>
+                    </svg>
+                    <span>View in Figma</span>
                   </a>
                 )}
                 {project.links?.github && (
                   <a
                     href={project.links.github}
                     target="_blank"
-                    rel="noreferrer"
+                    rel="noopener noreferrer"
                     className="px-6 py-3 rounded-full border border-black hover:bg-black hover:text-white transition-colors text-xs font-bold uppercase tracking-wider inline-flex items-center gap-2"
                   >
-                    <Github className="w-4 h-4" />
+                    <Github className="w-3.5 h-3.5" />
                     <span>Repository</span>
                   </a>
                 )}
@@ -154,13 +173,16 @@ export default function ProjectDetailPage() {
             {/* Full High-Resolution Artifact Gallery */}
             {project.screenshots && project.screenshots.length > 0 && (
               <div className="space-y-4 pt-6 border-t border-border">
-                <h3 className="font-extrabold text-xl tracking-tight text-foreground">High-Resolution Previews</h3>
+                <h3 className="font-extrabold text-xl tracking-tight text-foreground">Project Gallery</h3>
                 <div className="grid grid-cols-1 gap-4">
-                  {project.screenshots.map((img, i) => (
-                    <div key={i} className="rounded-xl overflow-hidden border border-border bg-stone-50 shadow-sm">
-                      <img src={img} alt={`${project.title} artifact ${i + 1}`} className="w-full h-auto object-cover" />
-                    </div>
-                  ))}
+                  <a 
+                    href={project.links?.figma || project.links?.github || project.links?.live} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="text-sm font-bold underline"
+                  >
+                    View the Full Project in {project.links?.figma ? 'Figma' : project.links?.github ? 'GitHub' : 'npm'}
+                  </a>
                 </div>
               </div>
             )}

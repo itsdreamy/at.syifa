@@ -27,10 +27,6 @@ export default function HomePage() {
     portfolioApi.getAchievements()
       .then((data) => data && data.length > 0 && setAchievements(data))
       .catch(() => {});
-
-    portfolioApi.getVolunteer()
-      .then((data) => data && data.length > 0 && setVolunteer(data))
-      .catch(() => {});
   }, []);
 
   return (
@@ -41,7 +37,7 @@ export default function HomePage() {
         <div className="flex flex-col md:flex-row items-start justify-between gap-6 z-20">
           <div className="max-w-md">
             <p className="text-secondary text-sm md:text-base font-normal leading-relaxed">
-              <strong className="text-foreground font-bold">Hi, I'm Syifa!</strong> — a designer and developer who enjoys turning ideas into thoughtful digital experiences. I explore the space between design, technology, and the little details that make products feel right.
+              <strong className="text-foreground font-bold">Hi, I'm Syifa!</strong> A designer and developer who enjoys turning ideas into thoughtful digital experiences. I explore the space between design, technology, and the little details that make products feel right.
             </p>
           </div>
           <div className="font-bold text-xs md:text-sm tracking-widest text-foreground">
@@ -159,9 +155,9 @@ export default function HomePage() {
       <div className="relative w-full">
         {/* Layer 1: Selected Work */}
         <StackedSection index={0} total={5} id="work" bgColor="bg-[#FAFAF9]">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 pb-6 border-b border-border">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-14">
             <div>
-              <div className="text-xs uppercase font-bold tracking-widest text-muted mb-2">
+              <div className="text-xs uppercase font-bold tracking-widest text-muted mb-3">
                 A Few Things I've Worked On
               </div>
               <h2 className="text-4xl sm:text-6xl font-extrabold tracking-tightest uppercase text-foreground">
@@ -216,8 +212,8 @@ export default function HomePage() {
 
         {/* Layer 2: Process Timeline */}
         <StackedSection index={1} total={5} id="timeline" bgColor="bg-white">
-          <div className="mb-10 pb-6 border-b border-border">
-            <div className="text-xs uppercase font-bold tracking-widest text-muted mb-2">
+          <div className="mb-10">
+            <div className="text-xs uppercase font-bold tracking-widest text-muted mb-3">
               Process &amp; Cadence
             </div>
             <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-foreground">
@@ -229,15 +225,15 @@ export default function HomePage() {
 
         {/* Layer 3: Academic Highlights & Recognition */}
         <StackedSection index={2} total={5} id="achievements" bgColor="bg-[#FAFAF9]">
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-12 pb-6 border-b border-border">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-12">
             <div>
-              <div className="text-xs uppercase font-bold tracking-widest text-muted mb-2">
+              <div className="text-xs uppercase font-bold tracking-widest text-muted mb-3">
                 A Little Progress Along the Way
               </div>
               <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-foreground">
                 Academic Highlights &amp; Recognition
               </h2>
-              <p className="text-secondary mt-2 text-sm font-normal max-w-xl leading-relaxed">
+              <p className="text-secondary mt-3 text-sm font-normal max-w-xl leading-relaxed">
                 Some milestones I'm proud of, from academic achievements to opportunities that challenged me to learn, grow, and try something new.
               </p>
             </div>

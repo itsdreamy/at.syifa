@@ -2,16 +2,16 @@ export const initialProjects = [
   {
     id: "project-001",
     slug: "bitanic-precision-agriculture",
-    title: "Bitanic — Precision Agriculture Catalog & Ecosystem",
+    title: "Bitanic: Precision Agriculture Catalog & Ecosystem",
     description: "Product catalog and hardware specification presentation for the Rapid Soil Checker (RSC Portable & Pro) agricultural IoT monitoring ecosystem.",
     category: "UI Design",
     technologies: ["Figma", "UI Design", "Product Catalog", "Design Systems"],
     thumbnail: "/assets/projects/design/bitanic.png",
     featured: true,
     role: "UI/UX & Product Designer",
-    year: "2026",
-    overview: "Bitanic is a comprehensive product catalog and digital specification interface developed for the Rapid Soil Checker (RSC) device series. The system details portable and pro IoT hardware used by farmers to measure soil pH, NPK nutrients, moisture, temperature, and electrical conductivity with cloud and edge monitoring.",
-    problem: "Agricultural hardware specifications are often dense and difficult for farmers and stakeholders to digest, requiring a clean, accessible layout that balances technical accuracy with intuitive visual hierarchy.",
+    year: "2024",
+    overview: "This project is a comprehensive product catalog and digital specification interface developed for the Rapid Soil Checker (RSC) device series. The system details portable and pro IoT hardware used by farmers to measure soil pH, NPK nutrients, moisture, temperature, and electrical conductivity with cloud and edge monitoring.",
+    problem: "Agricultural hardware specification catalogs are often dense and difficult for farmers and stakeholders to digest, requiring a clean, accessible layout that balances technical accuracy with intuitive visual hierarchy.",
     process: [
       "Analyzed agronomic sensor metrics and hardware specifications (NPK, pH, temperature, EC, power constraints)",
       "Structured product variants (Portable vs. Pro) with clear comparative pricing and feature matrices",
@@ -32,13 +32,14 @@ export const initialProjects = [
     ],
     links: {
       live: "",
-      github: ""
+      github: "",
+      figma: "https://www.figma.com/design/1234567890/Bitanic?node-id=0%3A1"
     }
   },
   {
     id: "project-002",
     slug: "wedding-organizer-experience",
-    title: "Wedding Organizer (WO) — Service & Package Experience",
+    title: "Wedding Organizer (WO): Service & Package Experience",
     description: "Exclusive wedding organizer service landing interface highlighting priority planning, dedicated wedding assistant coordination, and package tiers.",
     category: "UI Design",
     technologies: ["Figma", "Web Design", "Editorial Layout", "Typography"],
@@ -67,13 +68,14 @@ export const initialProjects = [
     ],
     links: {
       live: "",
-      github: ""
+      github: "",
+      figma: ""
     }
   },
   {
     id: "project-003",
     slug: "ailand-crowdfunding-platform",
-    title: "AILAND — Crowdfunding Land & Property Investment",
+    title: "AILAND: Crowdfunding Land & Property Investment",
     description: "Modern crowdfunding web application democratizing land and property investment through AI-powered risk assessment and transparent issuance workflows.",
     category: "Web Development",
     technologies: ["React", "Tailwind CSS", "JavaScript", "REST API"],
@@ -102,48 +104,49 @@ export const initialProjects = [
     ],
     links: {
       live: "",
-      github: ""
+      github: "",
+      figma: "https://www.figma.com/proto/WH0fRC2d5DnQHRDq00FXaN/AILand?node-id=643-364&p=f&t=NJ10NACH2qhYk7F6-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=643%3A364&show-proto-sidebar=1"
     }
   },
   {
     id: "project-004",
-    slug: "helpme-admin-dashboard",
-    title: "HelpMe! — On-Demand Services Operations Dashboard",
-    description: "Comprehensive administrative dashboard managing service partners (Mitra), client accounts, categorized task requests, and real-time order statistics.",
+    slug: "moneybud",
+    title: "Moneybud: Personal Finance Management Dashboard",
+    description: "Comprehensive personal finance management dashboard managing income, expenses, savings, and investment tracking.",
     category: "Web Development",
-    technologies: ["React", "Data Visualization", "Tailwind CSS", "Dashboard UI"],
-    thumbnail: "/assets/projects/web/helpme.png",
+    technologies: ["Flask", "Data Visualization", "Tailwind CSS", "Dashboard UI", "Financial Planning"],
+    thumbnail: "/assets/projects/web/moneybud.png",
     featured: true,
-    role: "Frontend & Dashboard Developer",
+    role: "Full Stack Developer",
     year: "2025",
-    overview: "HelpMe! is an operations management console for an on-demand task and home services platform. Administrators can oversee business operations, track partner versus client ratios, manage service categories (odd jobs, household tasks, vehicle assistance), and evaluate quarterly order volume.",
-    problem: "Operational teams managing multi-category service marketplaces face information overload without clear data visualizations and consolidated partner management tools.",
+    overview: "Moneybud is a personal finance management dashboard that helps you track your income, expenses, savings, and investment.",
+    problem: "Many people struggle to manage their personal finances effectively due to lack of clarity and organization.",
     process: [
-      "Designed collapsible navigation menus grouping business operations, users, and service categories",
-      "Integrated yearly and quarterly bar charts for order volume and activity forecasting",
-      "Built clean donut charts depicting mitra-to-client ratio distributions"
+      "Designed a clean and intuitive dashboard interface for financial tracking",
+      "Integrated income, expenses, savings, and investment tracking",
+      "Built a financial planning and forecasting system"
     ],
     responsibilities: [
-      "Dashboard layout architecture and responsive data views",
-      "Chart components and filter controls (Yearly, Category, Status)",
-      "User role and partner management views"
+      "Dashboard layout architecture and responsive data views",  
+      "Income, expenses, savings, and investment tracking"
     ],
     screenshots: [
-      "/assets/projects/web/helpme.png"
+      "/assets/projects/web/moneybud.png"
     ],
     outcomes: [
-      "Reduced operational navigation overhead for administrators managing multiple service categories",
-      "Clear visual data indicators enabling rapid quarterly performance reviews"
+      "Helped users gain clarity and control over their personal finances",
+      "Enabled users to make informed decisions about their financial future"
     ],
     links: {
       live: "",
-      github: ""
+      github: "https://github.com/itsdreamy/moneybud",
+      figma: ""
     }
   },
   {
     id: "project-005",
     slug: "prakerin-internship-portal",
-    title: "Prakerin.id — Vocational Internship & Career Portal",
+    title: "Prakerin.id: Vocational Internship & Career Portal",
     description: "Digital platform bridging vocational students with industrial work internships (PKL) at top enterprise and technology companies.",
     category: "Web Development",
     technologies: ["React", "Tailwind CSS", "Search & Filter", "Responsive UI"],
@@ -178,7 +181,7 @@ export const initialProjects = [
   {
     id: "project-006",
     slug: "skripz-thesis-platform",
-    title: "SkripZ — Academic Thesis Management Platform",
+    title: "SkripZ: Academic Thesis Management Platform",
     description: "Collaborative academic portal facilitating real-time undergraduate thesis tracking, advisor feedback, and secure institutional manuscript archiving.",
     category: "Web Development",
     technologies: ["React", "Workflow Automation", "Tailwind CSS", "Academic Systems"],
@@ -207,42 +210,102 @@ export const initialProjects = [
     ],
     links: {
       live: "",
-      github: ""
+      github: "",
+      figma: "https://www.figma.com/proto/jKrOhu3Vszb5iaJ7Nm5aJO/SkripZ-Landing-Page-UI?node-id=33-2405&p=f&t=NVSyQ5YUXeBAgZ7H-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1"
     }
   },
-  {
-    id: "project-007",
-    slug: "fast-spring-motion-npm",
-    title: "fast-spring-motion (npm package)",
-    description: "A published lightweight zero-dependency physics spring solver for high-performance React and DOM animations.",
-    category: "Open Source",
-    technologies: ["TypeScript", "npm", "Microbenchmarks", "Rollup"],
-    thumbnail: "/assets/projects/package/npm-package.svg",
-    featured: false,
-    role: "Creator & Maintainer",
-    year: "2025",
-    overview: "Published on npm, fast-spring-motion delivers RK4 spring physics numerical integration in less than 1.8 KB minified, enabling silky smooth organic transitions without bundle bloat.",
-    problem: "Full animation engines can be excessive for lightweight UI widgets needing only organic elastic interpolation.",
-    process: [
-      "Implemented 4th-order Runge-Kutta numerical solver for mass-spring-damper equations",
-      "Profiled garbage collector pressure and eliminated object allocations in inner loops",
-      "Wrote 100% branch test coverage using Vitest and published automated CI/CD releases"
-    ],
+  
+{
+  id: "project-007",
+  slug: "fay-indo-formatter",
+  title: "fay-indo-formatter",
+  subtitle: "Indonesian Utility Library",
+  description:
+    "A lightweight, zero-dependency JavaScript utility library for common Indonesian formatting needs, including Rupiah, dates, terbilang, and phone numbers.",
+  category: "Open Source",
+  technologies: [
+    "JavaScript",
+    "Node.js",
+    "npm",
+    "Open Source"
+  ],
+  thumbnail: "/assets/projects/package/npm-package.png",
+  featured: false,
+  role: "Creator & Maintainer",
+  year: "2026",
+
+  overview:
+    "I created fay-indo-formatter to simplify common Indonesian formatting tasks in JavaScript applications. The package brings together utilities for Rupiah currency, Indonesian dates, number-to-words conversion, and Indonesian mobile phone number validation and normalization. It is designed to be lightweight, reusable, and free from external runtime dependencies.",
+
+  problem:
+    "Indonesian applications often need to handle localized data such as currency, dates, invoice amounts, and phone numbers. Implementing these formatting rules repeatedly can result in duplicated code and inconsistent behavior. I wanted to make these common tasks easier through a small, reusable utility package.",
+
+  process: [
+    "Identified common Indonesian formatting requirements in JavaScript applications.",
+    "Developed reusable utilities for Rupiah, Indonesian dates, and number-to-words conversion.",
+    "Implemented validation and normalization for Indonesian mobile phone numbers.",
+    "Prepared the package API, documentation, and usage examples.",
+    "Published the package to npm for other developers to use."
+  ],
+
     responsibilities: [
-      "Mathematical modeling of critically damped and underdamped oscillators",
-      "API design and TypeScript definitions",
-      "Packaging, documentation, and continuous benchmarking"
+      "Package concept and development",
+      "Utility function implementation",
+      "API design and input validation",
+      "Error handling and documentation",
+      "npm publishing and package maintenance"
     ],
+
     screenshots: [
       "/assets/projects/npm-preview.svg"
     ],
+
     outcomes: [
-      "Over 10,000+ downloads on npm registry",
-      "Under 1.8 KB minified bundle footprint with zero external dependencies"
+      "Successfully published an open-source npm package.",
+      "Combined five practical Indonesian formatting utilities in one library.",
+      "Designed as a zero-dependency utility for lightweight integration."
+    ],
+
+    links: {
+      live: "https://www.npmjs.com/package/@itsdreamy/fay-indo-formatter",
+      github: "",
+      figma: ""
+    }
+  },
+  {
+    id: "project-008",
+    slug: "help-me",
+    title: "Help Me: Urgent Helper App",
+    description: "A mobile app that helps you find help when you need it.",
+    category: "Mobile Development",
+    technologies: ["React JS", "Tailwind CSS", "API Integration", "Figma"],
+    thumbnail: "/assets/projects/web/help-me.png",
+    featured: false,
+    role: "Mobile Developer",
+    year: "2025",
+    overview: "Help Me is a mobile app that helps you find help when you need it.",
+    problem: "Many people struggle to find help when they need it.",
+    process: [
+      "Developed a mobile app that helps you find help when you need it.",
+      "Integrated a search bar with popular category filter pills",
+      "Streamlined the registration and candidate application pipeline"
+    ],
+    responsibilities: [
+      "Frontend UI engineering and component design",
+      "Search and tag filtering interactions",
+      "Responsive navigation and authentication modals"
+    ],
+    screenshots: [
+      "/assets/projects/web/help-me.png"
+    ],
+    outcomes: [
+      "Provided an intuitive, student-centric job search experience",
+      "Unified diverse vocational technical fields under an organized category hierarchy"
     ],
     links: {
-      live: "https://www.npmjs.com",
-      github: "https://github.com"
+      live: "",
+      github: "",
+      figma: "https://www.figma.com/proto/EToaKcJfLBx9JID8YPzE75/HelpMe-?node-id=2-65&starting-point-node-id=2%3A65"
     }
   }
 ];
@@ -250,27 +313,21 @@ export const initialProjects = [
 export const initialVolunteers = [
   {
     id: "vol-001",
-    organization: "[Organization / Initiative Name]",
-    role: "[Volunteer Mentor & Facilitator]",
-    date: "[2024]",
-    description: "[Brief description of your volunteer contribution, activities, and community impact]",
-    image: "/assets/syifa/syifa-4.jpeg"
+    organization: "AWS Student Builder Club",
+    role: "Lead of Technical and Learning Team",
+    date: "2026",
+    description: "Leading technical workshops, cloud learning sessions, and mentoring student developers in building modern cloud solutions.",
+    image: "/assets/achievements/aws-builder.jpeg",
+    reelUrl: "https://www.instagram.com/p/DfPeF9DGszU/?img_index=5"
   },
   {
     id: "vol-002",
-    organization: "[Student & Campus Community]",
-    role: "[Community Event Coordinator]",
-    date: "[2023 - 2024]",
-    description: "[Brief description of your community event organization, peer support, or technical workshop]",
-    image: "/assets/syifa/syifa-5.jpeg"
-  },
-  {
-    id: "vol-003",
-    organization: "[Social / Educational Outreach]",
-    role: "[Volunteer Team Member]",
-    date: "[2023]",
-    description: "[Brief description of collaborative field work, mentoring sessions, or social contribution]",
-    image: "/assets/syifa/syifa-2.jpeg"
+    organization: "American Australian English Center",
+    role: "Volunteer English Teacher",
+    date: "2026",
+    description: " Volunteered internationally in Cà Mau, Vietnam, teaching English and facilitating interactive outdoor workshops with students.",
+    image: "/assets/achievements/ogv.png",
+    reelUrl: "https://www.instagram.com/p/DfJyQocsxMI/"
   }
 ];
 

@@ -5,7 +5,8 @@
     "role": "[Volunteer Mentor & Facilitator]",
     "date": "[2024]",
     "description": "[Brief description of your volunteer contribution, activities, and community impact]",
-    "image": "/assets/syifa/syifa-4.jpeg"
+    "image": "/assets/syifa/syifa-4.jpeg",
+    "reelUrl": ""
   },
   {
     "id": "vol-002",
@@ -13,7 +14,8 @@
     "role": "[Community Event Coordinator]",
     "date": "[2023 - 2024]",
     "description": "[Brief description of your community event organization, peer support, or technical workshop]",
-    "image": "/assets/syifa/syifa-5.jpeg"
+    "image": "/assets/syifa/syifa-5.jpeg",
+    "reelUrl": ""
   },
   {
     "id": "vol-003",
@@ -21,6 +23,7 @@
     "role": "[Volunteer Team Member]",
     "date": "[2023]",
     "description": "[Brief description of collaborative field work, mentoring sessions, or social contribution]",
-    "image": "/assets/syifa/syifa-2.jpeg"
+    "image": "/assets/syifa/syifa-2.jpeg",
+    "reelUrl": ""
   }
 ]

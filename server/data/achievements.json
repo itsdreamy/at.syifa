@@ -2,33 +2,17 @@
   {
     "id": "ach-001",
     "title": "Grade Point Average (GPA) 3.97",
-    "description": "Graduated with highest academic honors (Summa Cum Laude distinction), demonstrating consistent excellence in computer science, human-computer interaction, and software architecture coursework.",
+    "description": "Demonstrating consistent excellence in computer science, human-computer interaction, and software architecture coursework.",
     "category": "Academic",
-    "date": "2024",
-    "image": "/assets/achievements/syifa-1.jpeg"
+    "date": "2025",
+    "image": "/assets/achievements/gpa.jpeg"
   },
   {
     "id": "ach-002",
-    "title": "Merit Academic Scholarship Recipient",
-    "description": "Awarded full competitive institutional merit scholarship in recognition of exceptional academic standing, innovative research projects, and extracurricular leadership.",
+    "title": "Juara 1 Beasiswa Bupati Nusa Putra University",
+    "description": "Awarded full Scholarship from Bupati Sukabumi to study in Nusa Putra University for 4 years",
     "category": "Scholarship",
-    "date": "2022 - 2024",
-    "image": "/assets/achievements/syifa-2.jpeg"
-  },
-  {
-    "id": "ach-003",
-    "title": "UI/UX & Web Development Competition Finalist",
-    "description": "Placed as a national finalist in competitive student UI/UX design & front-end implementation hackathon, designing accessible digital solutions under strict time constraints.",
-    "category": "Competition",
-    "date": "2023",
-    "image": "/assets/achievements/syifa-3.jpeg"
-  },
-  {
-    "id": "ach-004",
-    "title": "Dean's List of Academic Recognition",
-    "description": "Recognized consecutively across multiple semesters for outstanding scholastic performance and dedicated peer mentoring contributions.",
-    "category": "Academic",
-    "date": "2021 - 2024",
-    "image": "/assets/achievements/syifa-4.jpeg"
+    "date": "2025-2029",
+    "image": "/assets/achievements/scholarship.png"
   }
 ]

@@ -5,7 +5,12 @@
     "title": "Bitanic — Precision Agriculture Catalog & Ecosystem",
     "description": "Product catalog and hardware specification presentation for the Rapid Soil Checker (RSC Portable & Pro) agricultural IoT monitoring ecosystem.",
     "category": "UI Design",
-    "technologies": ["Figma", "UI Design", "Product Catalog", "Design Systems"],
+    "technologies": [
+      "Figma",
+      "UI Design",
+      "Product Catalog",
+      "Design Systems"
+    ],
     "thumbnail": "/assets/projects/design/bitanic.png",
     "featured": true,
     "role": "UI/UX & Product Designer",
@@ -32,7 +37,8 @@
     ],
     "links": {
       "live": "",
-      "github": ""
+      "github": "",
+      "figma": "https://www.figma.com/design/1234567890/Bitanic?node-id=0%3A1"
     }
   },
   {
@@ -41,7 +47,12 @@
     "title": "Wedding Organizer (WO) — Service & Package Experience",
     "description": "Exclusive wedding organizer service landing interface highlighting priority planning, dedicated wedding assistant coordination, and package tiers.",
     "category": "UI Design",
-    "technologies": ["Figma", "Web Design", "Editorial Layout", "Typography"],
+    "technologies": [
+      "Figma",
+      "Web Design",
+      "Editorial Layout",
+      "Typography"
+    ],
     "thumbnail": "/assets/projects/design/wo.png",
     "featured": true,
     "role": "UI Designer",
@@ -67,7 +78,8 @@
     ],
     "links": {
       "live": "",
-      "github": ""
+      "github": "",
+      "figma": ""
     }
   },
   {
@@ -76,7 +88,12 @@
     "title": "AILAND — Crowdfunding Land & Property Investment",
     "description": "Modern crowdfunding web application democratizing land and property investment through AI-powered risk assessment and transparent issuance workflows.",
     "category": "Web Development",
-    "technologies": ["React", "Tailwind CSS", "JavaScript", "REST API"],
+    "technologies": [
+      "React",
+      "Tailwind CSS",
+      "JavaScript",
+      "REST API"
+    ],
     "thumbnail": "/assets/projects/web/ailand.png",
     "featured": true,
     "role": "Frontend Developer",
@@ -102,7 +119,8 @@
     ],
     "links": {
       "live": "",
-      "github": ""
+      "github": "",
+      "figma": ""
     }
   },
   {
@@ -111,7 +129,12 @@
     "title": "HelpMe! — On-Demand Services Operations Dashboard",
     "description": "Comprehensive administrative dashboard managing service partners (Mitra), client accounts, categorized task requests, and real-time order statistics.",
     "category": "Web Development",
-    "technologies": ["React", "Data Visualization", "Tailwind CSS", "Dashboard UI"],
+    "technologies": [
+      "React",
+      "Data Visualization",
+      "Tailwind CSS",
+      "Dashboard UI"
+    ],
     "thumbnail": "/assets/projects/web/helpme.png",
     "featured": true,
     "role": "Frontend & Dashboard Developer",
@@ -137,7 +160,8 @@
     ],
     "links": {
       "live": "",
-      "github": ""
+      "github": "",
+      "figma": ""
     }
   },
   {
@@ -146,7 +170,12 @@
     "title": "Prakerin.id — Vocational Internship & Career Portal",
     "description": "Digital platform bridging vocational students with industrial work internships (PKL) at top enterprise and technology companies.",
     "category": "Web Development",
-    "technologies": ["React", "Tailwind CSS", "Search & Filter", "Responsive UI"],
+    "technologies": [
+      "React",
+      "Tailwind CSS",
+      "Search & Filter",
+      "Responsive UI"
+    ],
     "thumbnail": "/assets/projects/web/prakerin.png",
     "featured": true,
     "role": "Frontend Developer",
@@ -172,7 +201,8 @@
     ],
     "links": {
       "live": "",
-      "github": ""
+      "github": "",
+      "figma": ""
     }
   },
   {
@@ -181,7 +211,12 @@
     "title": "SkripZ — Academic Thesis Management Platform",
     "description": "Collaborative academic portal facilitating real-time undergraduate thesis tracking, advisor feedback, and secure institutional manuscript archiving.",
     "category": "Web Development",
-    "technologies": ["React", "Workflow Automation", "Tailwind CSS", "Academic Systems"],
+    "technologies": [
+      "React",
+      "Workflow Automation",
+      "Tailwind CSS",
+      "Academic Systems"
+    ],
     "thumbnail": "/assets/projects/web/skripz.png",
     "featured": true,
     "role": "Frontend Engineer",
@@ -207,7 +242,8 @@
     ],
     "links": {
       "live": "",
-      "github": ""
+      "github": "",
+      "figma": ""
     }
   },
   {
@@ -216,7 +252,12 @@
     "title": "fast-spring-motion (npm package)",
     "description": "A published lightweight zero-dependency physics spring solver for high-performance React and DOM animations.",
     "category": "Open Source",
-    "technologies": ["TypeScript", "npm", "Microbenchmarks", "Rollup"],
+    "technologies": [
+      "TypeScript",
+      "npm",
+      "Microbenchmarks",
+      "Rollup"
+    ],
     "thumbnail": "/assets/projects/package/npm-package.svg",
     "featured": false,
     "role": "Creator & Maintainer",
@@ -242,7 +283,8 @@
     ],
     "links": {
       "live": "https://www.npmjs.com",
-      "github": "https://github.com"
+      "github": "https://github.com",
+      "figma": ""
     }
   }
 ]

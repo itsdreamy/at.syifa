@@ -10,14 +10,14 @@ export default function WorkPage() {
   const [viewMode, setViewMode] = useState('canvas'); // 'canvas' | 'grid'
   const containerRef = useRef(null);
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-    portfolioApi.getProjects()
-      .then((data) => {
-        if (data && data.length > 0) setProjects(data);
-      })
-      .catch((err) => console.warn('Loaded fallback projects'));
-  }, []);
+  // useEffect(() => {
+  //   window.scrollTo(0, 0);
+  //   portfolioApi.getProjects()
+  //     .then((data) => {
+  //       if (data && data.length > 0) setProjects(data);
+  //     })
+  //     .catch((err) => console.warn('Loaded fallback projects'));
+  // }, []);
 
   // Pre-configured organic canvas coordinates for projects
   const cardPositions = [
@@ -149,7 +149,7 @@ export default function WorkPage() {
                     </p>
                   </div>
                   <div className="mt-4 pt-4 border-t border-border flex items-center justify-between text-xs font-bold uppercase tracking-wider text-foreground">
-                    <span>View Case Study</span>
+                    <span>Take a Closer Look</span>
                     <ArrowUpRight className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                   </div>
                 </div>

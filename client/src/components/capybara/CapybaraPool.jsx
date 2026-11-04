@@ -129,7 +129,7 @@ export default function CapybaraPool() {
         {/* Editorial Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 pb-6 border-b border-border">
           <div>
-            <h2 className="font-serif text-4xl sm:text-5xl text-foreground tracking-tight">
+            <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-foreground">
             A Little Break!
             </h2>
             <p className="text-secondary text-sm font-sans max-w-sm">You've made it this far. How about taking a tiny break?</p>
