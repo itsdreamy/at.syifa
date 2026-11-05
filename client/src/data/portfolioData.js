@@ -331,6 +331,25 @@ export const initialVolunteers = [
   }
 ];
 
+export const initialAchievements = [
+  {
+    "id": "ach-001",
+    "title": "Grade Point Average (GPA) 3.97",
+    "description": "Demonstrating consistent excellence in computer science, human-computer interaction, and software architecture coursework.",
+    "category": "Academic",
+    "date": "2025",
+    "image": "/assets/achievements/gpa.jpeg"
+  },
+  {
+    "id": "ach-002",
+    "title": "Juara 1 Beasiswa Bupati Nusa Putra University",
+    "description": "Awarded full Scholarship from Bupati Sukabumi to study in Nusa Putra University for 4 years",
+    "category": "Scholarship",
+    "date": "2025-2029",
+    "image": "/assets/achievements/scholarship.png"
+  }
+];
+
 export const capybaraMessages = [
   "Psst! Have you explored my projects yet?",
   "I heard someone here likes good UI design.",
