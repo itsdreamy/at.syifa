@@ -347,6 +347,14 @@ export const initialAchievements = [
     "category": "Scholarship",
     "date": "2025-2029",
     "image": "/assets/achievements/scholarship.png"
+  },
+  {
+    "id": "ach-003",
+    "title": "IDEONIC 2026 Top 10 English Speech Finalist",
+    "description": "Finalist of IDEONIC 2026 InternationalEnglish Speech Competition",
+    "category": "Scholarship",
+    "date": "2025-2029",
+    "image": "/assets/achievements/ideonic.png"
   }
 ];
 
