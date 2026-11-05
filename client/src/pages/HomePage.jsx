@@ -10,12 +10,13 @@ import VolunteerSection from '../components/home/VolunteerSection';
 import StackedSection from '../components/home/StackedSection';
 import CapybaraPool from '../components/capybara/CapybaraPool';
 import ImageModal from '../components/common/ImageModal';
-import { initialProjects, initialVolunteers, initialAchievements } from '../data/portfolioData';
+import { initialProjects, initialVolunteers } from '../data/portfolioData';
 import { portfolioApi } from '../services/api';
+import initialAchievements from '../../../server/data/achievements.json';
 
 export default function HomePage() {
   const [projects, setProjects] = useState(initialProjects);
-  const [achievements, setAchievements] = useState(initialAchievements);
+  const [achievements, setAchievements] = useState([]);
   const [volunteer, setVolunteer] = useState(initialVolunteers);
   const [modalImage, setModalImage] = useState(null);
 
